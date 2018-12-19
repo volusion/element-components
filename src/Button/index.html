@@ -1,0 +1,138 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"/>
+        <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+        <script crossorigin src="https://unpkg.com/aphrodite@2.2.1/dist/aphrodite.umd.min.js"></script>
+        <script src="../../dist/component.umd.js"></script>
+        <script src="https://sdk.v2-prod.volusion.com/element-sdk.umd.js"></script>
+    </head>
+    <body>
+        <div id="root"></div>
+    </body>
+    <script>
+        var name = ElementComponents.Button.name;
+        var stylesConfig1 = {
+            color: {
+                background: "#fff",
+                link: "#777",
+                primary: "#333",
+                text: "#777"
+            },
+            globalComponents: {
+                [name]: {
+                    buttonStyles: {
+                        textColor: '#fff',
+                        textTransform: 'none', // none, uppercase
+                        backgroundColor: '#333',
+                        borderColor: '#333333',
+                        hoverTextColor: '#fff',
+                        hoverBackgroundColor: '#555',
+                        hoverBorderColor: '#555',
+                        borderThickness: 'none', // basic, thin, thick, none
+                        size: 'medium', // small, medium, large, block
+                        rounded: 'pill', // none, small, medium, large, pill
+                        growOnHover: true
+                    }
+                }
+            },
+            typography: {
+                baseFontSize: "16px",
+                fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+                headingWeight: 700
+            }
+        };
+        var stylesConfig2 = {
+            color: {
+                background: "#fff",
+                link: "#777",
+                primary: "#333",
+                text: "#777"
+            },
+            globalComponents: {
+                [name]: {
+                    buttonStyles: {
+                        textColor: 'Coral',
+                        textTransform: 'uppercase',
+                        backgroundColor: '#fff',
+                        borderColor: 'Coral',
+                        hoverTextColor: '#fff',
+                        hoverBackgroundColor: 'Coral',
+                        hoverBorderColor: 'Coral',
+                        borderThickness: 'thin', // basic, thin, thick, none
+                        size: 'medium', // small, medium, large, block
+                        rounded: 'none', // none, small, medium, large, pill
+                        growOnHover: false
+                    }
+                }
+            },
+            typography: {
+                baseFontSize: "16px",
+                fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+                headingWeight: 700
+            }
+        };
+        var stylesConfig3 = {
+            color: {
+                background: "#fff",
+                link: "#777",
+                primary: "#333",
+                text: "#777"
+            },
+            globalComponents: {
+                [name]: {
+                    buttonStyles: {
+                        textColor: 'PaleVioletRed',
+                        textTransform: 'uppercase',
+                        backgroundColor: '#fff',
+                        borderColor: 'PaleVioletRed',
+                        hoverTextColor: '#fff',
+                        hoverBackgroundColor: 'PaleVioletRed',
+                        hoverBorderColor: 'PaleVioletRed',
+                        borderThickness: 'thick', // basic, thin, thick, none
+                        size: 'block', // small, medium, large, block
+                        rounded: 'large', // none, small, medium, large, pill
+                        growOnHover: false
+                    }
+                }
+            },
+            typography: {
+                baseFontSize: "16px",
+                fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+                headingWeight: 700
+            }
+        };
+        var stylesConfig4 = {
+            color: {
+                background: "#fff",
+                link: "#777",
+                primary: "#333",
+                text: "#777"
+            },
+            globalComponents: {
+            },
+            typography: {
+                baseFontSize: "16px",
+                fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+                headingWeight: 700
+            }
+        };
+        var ElementPropTypes = window.ElementSdk.ElementPropTypes;
+        var buttons = [
+            stylesConfig1,
+            stylesConfig2,
+            stylesConfig3,
+            stylesConfig4
+        ].map((config, index) => {
+            return React.createFactory(ElementComponents.Button.factory(
+                { React, ElementPropTypes },
+                { StyleSheet: aphrodite.StyleSheet, css: aphrodite.css },
+                { color: config.color, globalComponents: config.globalComponents, typography: config.typography }
+            ))({style: {margin: '10px'}, key: index}, `Button ${index + 1}`)
+        })
+        ReactDOM.render(
+            buttons,
+            document.getElementById('root')
+        );
+    </script>
+</html>
