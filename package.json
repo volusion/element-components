@@ -1,6 +1,6 @@
 {
   "name": "@volusion/element-components",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Collection of reusable components across Element blocks",
   "main": "lib/index.js",
   "author": "Volusion LLC",
