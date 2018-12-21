@@ -120,7 +120,10 @@ const factory = (
         }
     };
 
-    return component;
+    return {
+        component,
+        config: configSpec
+    };
 };
 
 export { factory, defaultConfig, name };
