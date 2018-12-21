@@ -45,6 +45,7 @@ function devBuild() {
                 throwOnError: true
             }),
             babel({
+                plugins: ['external-helpers'],
                 exclude: ['node_modules/**']
             }),
             replace({

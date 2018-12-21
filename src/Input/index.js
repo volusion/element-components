@@ -31,7 +31,7 @@ const factory = (
         styles(name, globalStyles, mergedComponentStyles)
     );
 
-    const props = {
+    const configSpec = {
         placeholderText: ElementPropTypes.string,
         inputType: ElementPropTypes.string,
         styles: ElementPropTypes.shape({
@@ -61,7 +61,7 @@ const factory = (
     };
 
     const component = class extends React.Component {
-        static propTypes = props;
+        static propTypes = configSpec;
 
         configClasses = ({ textTransform, borderThickness, size, rounded }) => {
             const base = 'link dib pointer bg-animate';
@@ -108,7 +108,10 @@ const factory = (
             );
         }
     };
-    return component;
+    return {
+        component,
+        config: configSpec
+    };
 };
 
 export { factory, defaultConfig, name };
