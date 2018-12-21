@@ -28,15 +28,6 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 We're very excited that you're interested in contributing! At present, we are already accepting issues and PR. We do already have a [Code of Conduct](CODE_OF_CONDUCT.md) in place.
 
-## Authors
-
-## Authors
-
-- **Cameron Jones** &mdash; [cameron-jones-volusion](https://github.com/cameron-jones-volusion)
-- **Greg Murray** &mdash; [greg-murray-volusion](https://github.com/greg-murray-volusion)
-- **Maggie Petersen** &mdash; [MaggieVolusion](https://github.com/MaggieVolusion)
-- **Santiago Oquendo** &mdash; [santios](https://github.com/santios)
-
 ## Code of Conduct
 
 Though we are not accepting contributions for this repo at the moment, we still have a [Code of Conduct](./CODE_OF_CONDUCT.md) in place.
