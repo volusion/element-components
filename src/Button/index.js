@@ -108,14 +108,14 @@ const factory = (
         render() {
             const { children, ...rest } = this.props;
             return (
-                <button
+                <a
                     className={`tc ${this.configClasses(
                         mergedComponentStyles
                     )} ${css(classes.button, classes.hover)}`}
                     {...rest}
                 >
                     {children}
-                </button>
+                </a>
             );
         }
     };
