@@ -109,8 +109,7 @@
                 primary: "#333",
                 text: "#777"
             },
-            globalComponents: {
-            },
+            globalComponents: {},
             typography: {
                 baseFontSize: "16px",
                 fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
@@ -128,7 +127,7 @@
                 { React, ElementPropTypes },
                 { StyleSheet: aphrodite.StyleSheet, css: aphrodite.css },
                 { color: config.color, globalComponents: config.globalComponents, typography: config.typography }
-            ))({style: {margin: '10px'}, key: index}, `Button ${index + 1}`)
+            ).component)({style: {margin: '10px'}, key: index}, `Button ${index + 1}`)
         })
         ReactDOM.render(
             linkButtons,
