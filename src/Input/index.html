@@ -40,7 +40,7 @@
                 headingWeight: 700
             }
         };
-        var VolusionPropTypes = window.ElementSdk.ElementPropTypes;
+        var ElementPropTypes = window.ElementSdk.ElementPropTypes;
         var inputs = [
             stylesConfig
         ].map((config, index) => {
@@ -48,7 +48,7 @@
                 { React, ElementPropTypes },
                 { StyleSheet: aphrodite.StyleSheet, css: aphrodite.css },
                 { color: config.color, globalComponents: config.globalComponents, typography: config.typography }
-            ))({style: {margin: '10px'}, key: index}, `Input ${index + 1}`)
+            ).component)({style: {margin: '10px'}, key: index}, `Input ${index + 1}`)
         })
         ReactDOM.render(
             inputs,
