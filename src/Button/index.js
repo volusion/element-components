@@ -3,7 +3,7 @@ import styles from './styles';
 
 const name = 'volComponentButton';
 
-const baseButtonStyleConfig = {
+const baseButtonStylesConfig = {
     textColor: '#fff',
     hoverTextColor: '#fff',
     backgroundColor: '#333',
@@ -24,10 +24,10 @@ const defaultConfig = {
     className: '',
     href: '',
     primaryButtonStyles: {
-        ...baseButtonStyleConfig
+        ...baseButtonStylesConfig
     },
     secondaryButtonStyles: {
-        ...baseButtonStyleConfig,
+        ...baseButtonStylesConfig,
         textColor: '#666',
         hoverTextColor: '#333',
         backgroundColor: '#fff',
