@@ -22,7 +22,7 @@ const baseButtonStyleConfig = {
 const defaultConfig = {
     buttonStyle: 'primary',
     className: '',
-    extendClasses: '',
+    href: '',
     primaryButtonStyles: {
         ...baseButtonStyleConfig
     },
@@ -70,7 +70,12 @@ const factory = (
             '800',
             '900'
         ]).isRequired,
-        textTransform: ElementPropTypes.oneOf(['uppercase', 'none']).isRequired,
+        textTransform: ElementPropTypes.oneOf([
+            'none',
+            'capitalize',
+            'lowercase',
+            'uppercase'
+        ]).isRequired,
         borderThickness: ElementPropTypes.oneOf([
             'basic',
             'thin',
@@ -181,6 +186,7 @@ const factory = (
 
         render() {
             const { children, buttonStyle, className, ...rest } = this.props;
+            const classExtensions = className ? className : '';
             const styles =
                 buttonStyle === 'secondary'
                     ? mergedComponentStyles.secondary
@@ -192,7 +198,7 @@ const factory = (
                             className={`${this.getButtonClasses(
                                 buttonStyle,
                                 styles
-                            )} ${className}`}
+                            )} ${classExtensions}`}
                             {...rest}
                         >
                             {children}
@@ -202,7 +208,7 @@ const factory = (
                             className={`${this.getButtonClasses(
                                 buttonStyle,
                                 styles
-                            )} ${className}`}
+                            )} ${classExtensions}`}
                             {...rest}
                         >
                             {children}

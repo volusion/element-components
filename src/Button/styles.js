@@ -1,7 +1,4 @@
 export default ({ primary, secondary }) => {
-    console.log('primary', primary); // eslint-disable-line
-    console.log('secondary', secondary); // eslint-disable-line
-
     return {
         primaryButton: {
             backgroundColor: primary.backgroundColor,
