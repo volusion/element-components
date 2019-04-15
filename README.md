@@ -6,50 +6,6 @@ configure their components globally across all theme pages.
 ### Button
 Button component allows for both a `primary` and `secondary` button, in either a `button` or `link` tag. Both config specs are the same. 
 
-### Config Spec
-```js
-{
-    className: PropTypes.string,
-    buttonStyle: PropTypes.string,
-    href: PropTypes.string,
-    children: ElementPropTypes.array,
-    primaryButtonStyles: ElementPropTypes.shape({ // or `secondaryButtonStyles`
-        textColor: ElementPropTypes.color.isRequired,
-        hoverTextColor: ElementPropTypes.color.isRequired,
-        backgroundColor: ElementPropTypes.color.isRequired,
-        hoverBackgroundColor: ElementPropTypes.color.isRequired,
-        borderColor: ElementPropTypes.color.isRequired,
-        hoverBorderColor: ElementPropTypes.color.isRequired,
-        fontWeight: ElementPropTypes.oneOf([
-            '300',
-            '400',
-            '500',
-            '600',
-            '700',
-            '800',
-            '900'
-        ]).isRequired,
-        textTransform: ElementPropTypes.oneOf(['uppercase', 'none']).isRequired,
-        borderThickness: ElementPropTypes.oneOf([
-            'basic',
-            'thin',
-            'thick',
-            'none'
-        ]).isRequired,
-        size: ElementPropTypes.oneOf(['small', 'medium', 'large', 'block'])
-            .isRequired,
-        rounded: ElementPropTypes.oneOf([
-            'none',
-            'small',
-            'medium',
-            'large',
-            'pill'
-        ]).isRequired,
-        growOnHover: ElementPropTypes.bool.isRequired
-    })
-};
-```
-
 ### Button config spec
 
 | Prop Name     | Options | Default Value | Site Designer Enabled |  Description |
@@ -66,7 +22,9 @@ Button component allows for both a `primary` and `secondary` button, in either a
 | `fontWeight`  | `'300', '400', '500', '600', '700', '800', '900'` | `'700'` | `true` | button font weight |
 | `textTransform`  | `'none', 'capitalize', 'lowercase', 'uppercase'` | `none` | `true` | button text transform |
 | `borderThickness`  | `'basic', 'thin', 'thick', 'none'` | `basic` | `true` | button border thickness |
-| `size`  | `'small', 'medium', 'large', 'block'` | `basic` | `true` | button size |
+| `size`  | `'small', 'medium', 'large', 'block'` | `medium` | `true` | button size |
+| `rounded`  | `'none', 'small', 'medium', 'large','pill'` | `none` | `true` | button round corners |
+| `growOnHover`  | `true` or `false` | `false` | `true` | button round corners |
 
 
 ## Development
