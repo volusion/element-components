@@ -28,8 +28,8 @@
                         hoverBackgroundColor: '#f45722',
                         borderColor: '#f9783c',
                         hoverBorderColor: '#f45722',
-                        fontWeight: '800',
-                        textTransform: 'none', // none, uppercase
+                        fontWeight: '800', // 300, 400, 500, 600, 700, 800, 900
+                        textTransform: 'none', // none, capitalize, lowercase, uppercase
                         borderThickness: 'basic', // basic, thin, thick, none
                         size: 'large', // small, medium, large, block
                         rounded: 'medium', // none, small, medium, large, pill
@@ -43,7 +43,8 @@
                         borderColor: '#f9783c',
                         hoverBorderColor: '#f9783c',
                         fontWeight: '800', // 300, 400, 500, 600, 700, 800, 900
-                        textTransform: 'none', // none, uppercase
+                        textTransform: 'none', // none, capitalize, lowercase, uppercase
+                        letterSpacing: 'none', // none, tracked, tight, mega
                         borderThickness: 'basic', // basic, thin, thick, none
                         size: 'large', // small, medium, large, block
                         rounded: 'medium', // none, small, medium, large, pill
@@ -58,15 +59,12 @@
             },
 
             primaryProps: {
-                buttonType: 'button', // 'button' or 'link'
-                buttonRole: 'primary', // 'primary' or 'secondary'
-                // href: '#' 
+                buttonStyle: 'primary', // 'primary' or 'secondary'
             },
 
             secondaryProps: {
-                buttonType: 'link', // 'button' or 'link'
-                buttonRole: 'secondary', // 'primary' or 'secondary'
-                href: '#' 
+                buttonStyle: 'secondary', // 'primary' or 'secondary'
+                href: '#'
             }
         };
 
