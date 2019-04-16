@@ -94,18 +94,12 @@ const factory = (
         growOnHover: ElementPropTypes.bool.isRequired
     };
     const configSpec = {
-        className: PropTypes.string,
-        buttonStyle: PropTypes.string,
-        extendClasses: PropTypes.string,
-        href: PropTypes.string,
         children: ElementPropTypes.array,
         primaryButtonStyles: ElementPropTypes.shape(buttonStylesConfigSpec),
         secondaryButtonStyles: ElementPropTypes.shape(buttonStylesConfigSpec)
     };
 
     const component = class extends React.Component {
-        static propTypes = configSpec;
-
         configClasses = ({
             fontWeight,
             letterSpacing,
@@ -217,6 +211,14 @@ const factory = (
                 </React.Fragment>
             );
         }
+    };
+
+    component.propTypes = {
+        className: PropTypes.string,
+        buttonStyle: PropTypes.string,
+        extendClasses: PropTypes.string,
+        href: PropTypes.string,
+        ...configSpec
     };
 
     return {
