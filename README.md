@@ -3,6 +3,29 @@
 The components in this repository are injected by default into all Element blocks. This lets users
 configure their components globally across all theme pages.
 
+### Button
+Button component allows for both a `primary` and `secondary` button, in either a `button` or `link` tag. Both config specs are the same. 
+
+### Button config spec
+
+| Prop Name     | Options | Default Value | Site Designer Enabled |  Description |
+| ------------- | ------- | ------------- | ------------------------ |  ----------- |
+| `className`  | string | `''` | `false` | allows for passing classes to component to extend current classes |
+| `buttonStyle`  | `'primary'` or `'secondary'` | `'primary'` | `false` |  Use `primaryButtonStyles` or `secondaryButtonStyles` |
+| `href`  | string | `''` | `false` | passing `href` as a prop will cause the component to render as an anchor tag |
+| `textColor`  | string | `'#333'` | `true` | button text color |
+| `hoverTextColor`  | string | `'#333'` | `true` | button text hover color |
+| `backgroundColor`  | string | `'#333'` | `true` | button background color |
+| `hoverBackgroundColor`  | string | `'#333'` | `true` | button background hover color |
+| `borderColor`  | string | `'#333'` | `true` | button border color |
+| `hoverBorderColor`  | string | `'#333'` | `true` | button border color |
+| `fontWeight`  | `'300', '400', '500', '600', '700', '800', '900'` | `'700'` | `true` | button font weight |
+| `textTransform`  | `'none', 'capitalize', 'lowercase', 'uppercase'` | `none` | `true` | button text transform |
+| `borderThickness`  | `'basic', 'thin', 'thick', 'none'` | `basic` | `true` | button border thickness |
+| `size`  | `'small', 'medium', 'large', 'block'` | `medium` | `true` | button size |
+| `rounded`  | `'none', 'small', 'medium', 'large','pill'` | `none` | `true` | button round corners |
+| `growOnHover`  | `true` or `false` | `false` | `true` | button round corners |
+
 
 ## Development
 
