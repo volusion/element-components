@@ -18,6 +18,9 @@ function standardBuilds() {
                 plugins: ['external-helpers'],
                 exclude: ['node_modules/**']
             }),
+            replace({
+                'process.env.NODE_ENV': JSON.stringify('production')
+            }),
             resolve({
                 browser: true
             }),
