@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"/>
+        <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+        <script crossorigin src="https://unpkg.com/aphrodite@2.2.1/dist/aphrodite.umd.min.js"></script>
+        <script src="../../dist/component.umd.js"></script>
+        <script src="https://sdk.v2-prod.volusion.com/element-sdk.umd.js"></script>
+    </head>
+    <body>
+        <div id="root"></div>
+    </body>
+    <script>
+        var ElementPropTypes = window.ElementSdk.ElementPropTypes;
+        
+        var name = ElementComponents.Image.name;
+        var Image = ElementComponents.Image.factory(
+              { React, ElementPropTypes },
+              aphrodite,
+              {}
+          ).component
+
+        ReactDOM.render(
+            React.createElement(Image, { src: 'http://lorempixel.com/g/1000/500/cats/' }),
+            document.getElementById('root')
+        );
+    </script>
+</html>
