@@ -169,14 +169,14 @@ const factory = (
         };
 
         getButtonClasses = (role, styles) => {
-            const configStyles = this.configClasses(styles);
+            const baseStyles = this.configClasses(styles);
             if (role === 'secondary') {
-                return `${configStyles} ${css(
+                return `${baseStyles} ${css(
                     classes.secondaryButton,
                     classes.secondaryButtonHover
                 )}`;
             } else {
-                return `${configStyles} ${css(
+                return `${baseStyles} ${css(
                     classes.primaryButton,
                     classes.primaryButtonHover
                 )}`;
