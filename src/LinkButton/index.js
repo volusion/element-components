@@ -99,9 +99,7 @@ const factory = (
             const grow = growOnHover ? 'grow' : '';
 
             /* eslint-disable security/detect-object-injection */
-            return `${base} ${text[textTransform]} ${
-                borders[borderThickness]
-            } ${sizes[size]} ${corners[rounded]} ${grow}`;
+            return `${base} ${text[textTransform]} ${borders[borderThickness]} ${sizes[size]} ${corners[rounded]} ${grow}`;
             /* eslint-enable security/detect-object-injection */
         };
 

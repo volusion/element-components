@@ -155,11 +155,7 @@ const factory = (
             const grow = growOnHover ? 'grow' : '';
 
             /* eslint-disable security/detect-object-injection */
-            return `${base} ${text[textTransform]} ${weight[fontWeight]} ${
-                borders[borderThickness]
-            } ${sizes[size]} ${corners[rounded]} ${
-                spacing[letterSpacing]
-            } ${grow}`;
+            return `${base} ${text[textTransform]} ${weight[fontWeight]} ${borders[borderThickness]} ${sizes[size]} ${corners[rounded]} ${spacing[letterSpacing]} ${grow}`;
             /* eslint-enable security/detect-object-injection */
         };
 
