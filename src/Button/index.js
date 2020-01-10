@@ -109,50 +109,50 @@ const factory = (
             rounded,
             growOnHover
         }) => {
-            const base = 'link dib pointer';
+            const base = css(classes.baseStyles);
             const borders = {
-                basic: 'ba bw1',
-                thin: 'ba',
-                thick: 'ba bw2',
-                none: 'bn'
+                basic: css(classes.borderBasic),
+                thin: css(classes.borderThin),
+                thick: css(classes.borderThick),
+                none: css(classes.borderNone)
             };
             const sizes = {
-                small: 'f7 ph2 pv1',
-                medium: 'f6 ph3 pv2',
-                large: 'f5 ph4 pv3',
-                block: 'f5 ph4 pv3 w-100 measure'
+                small: css(classes.sizeSmall),
+                medium: css(classes.sizeMedium),
+                large: css(classes.sizeLarge),
+                block: css(classes.sizeBlock)
             };
             const corners = {
-                none: 'br0',
-                small: 'br1',
-                medium: 'br2',
-                large: 'br3',
-                pill: 'br-pill'
+                none: css(classes.cornerNone),
+                small: css(classes.cornerSmall),
+                medium: css(classes.cornerMedium),
+                large: css(classes.cornerLarge),
+                pill: css(classes.cornerPill)
             };
             const weight = {
-                300: 'fw3',
-                400: 'fw4',
-                500: 'fw5',
-                600: 'fw6',
-                700: 'fw7',
-                800: 'fw8',
-                900: 'fw9'
+                300: css(classes.weight300),
+                400: css(classes.weight400),
+                500: css(classes.weight500),
+                600: css(classes.weight600),
+                700: css(classes.weight700),
+                800: css(classes.weight800),
+                900: css(classes.weight900)
             };
             const text = {
-                none: 'ttn',
-                capitalize: 'ttc',
-                lowercase: 'ttl',
-                uppercase: 'ttu'
+                none: css(classes.textTransformNone),
+                capitalize: css(classes.textTransformCapitalize),
+                lowercase: css(classes.textTransformLowercase),
+                uppercase: css(classes.textTransformUppercase)
             };
 
             const spacing = {
                 none: '',
-                tracked: 'tracked',
-                tight: 'tracked-tight',
-                mega: 'tracked-mega'
+                tracked: css(classes.spacingTracked),
+                tight: css(classes.spacingTight),
+                mega: css(classes.spacingMega)
             };
 
-            const grow = growOnHover ? 'grow' : '';
+            const grow = growOnHover ? css(classes.grow) : '';
 
             /* eslint-disable security/detect-object-injection */
             return `${base} ${text[textTransform]} ${weight[fontWeight]} ${borders[borderThickness]} ${sizes[size]} ${corners[rounded]} ${spacing[letterSpacing]} ${grow}`;
