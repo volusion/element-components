@@ -109,62 +109,67 @@ const factory = (
             rounded,
             growOnHover
         }) => {
-            const base = 'link dib pointer';
+            const base = classes.baseStyles;
             const borders = {
-                basic: 'ba bw1',
-                thin: 'ba',
-                thick: 'ba bw2',
-                none: 'bn'
+                basic: classes.borderBasic,
+                thin: classes.borderThin,
+                thick: classes.borderThick,
+                none: classes.borderNone
             };
             const sizes = {
-                small: 'f7 ph2 pv1',
-                medium: 'f6 ph3 pv2',
-                large: 'f5 ph4 pv3',
-                block: 'f5 ph4 pv3 w-100 measure'
+                small: classes.sizeSmall,
+                medium: classes.sizeMedium,
+                large: classes.sizeLarge,
+                block: classes.sizeBlock
             };
             const corners = {
-                none: 'br0',
-                small: 'br1',
-                medium: 'br2',
-                large: 'br3',
-                pill: 'br-pill'
+                none: classes.cornerNone,
+                small: classes.cornerSmall,
+                medium: classes.cornerMedium,
+                large: classes.cornerLarge,
+                pill: classes.cornerPill
             };
             const weight = {
-                300: 'fw3',
-                400: 'fw4',
-                500: 'fw5',
-                600: 'fw6',
-                700: 'fw7',
-                800: 'fw8',
-                900: 'fw9'
+                300: classes.weight300,
+                400: classes.weight400,
+                500: classes.weight500,
+                600: classes.weight600,
+                700: classes.weight700,
+                800: classes.weight800,
+                900: classes.weight900
             };
             const text = {
-                none: 'ttn',
-                capitalize: 'ttc',
-                lowercase: 'ttl',
-                uppercase: 'ttu'
+                none: classes.textTransformNone,
+                capitalize: classes.textTransformCapitalize,
+                lowercase: classes.textTransformLowercase,
+                uppercase: classes.textTransformUppercase
             };
 
             const spacing = {
-                none: '',
-                tracked: 'tracked',
-                tight: 'tracked-tight',
-                mega: 'tracked-mega'
+                none: null,
+                tracked: classes.spacingTracked,
+                tight: classes.spacingTight,
+                mega: classes.spacingMega
             };
 
-            const grow = growOnHover ? 'grow' : '';
+            const grow = growOnHover ? classes.grow : null;
 
             /* eslint-disable security/detect-object-injection */
-            return `${base} ${text[textTransform]} ${weight[fontWeight]} ${
-                borders[borderThickness]
-            } ${sizes[size]} ${corners[rounded]} ${
-                spacing[letterSpacing]
-            } ${grow}`;
+            return css(
+                base,
+                text[textTransform],
+                weight[fontWeight],
+                borders[borderThickness],
+                sizes[size],
+                corners[rounded],
+                spacing[letterSpacing],
+                grow
+            );
             /* eslint-enable security/detect-object-injection */
         };
 
         getButtonClasses = (role, styles) => {
-            const baseStyles = `tc link ${this.configClasses(styles)}`;
+            const baseStyles = this.configClasses(styles);
             if (role === 'secondary') {
                 return `${baseStyles} ${css(
                     classes.secondaryButton,

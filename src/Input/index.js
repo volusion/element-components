@@ -89,9 +89,7 @@ const factory = (
             };
 
             /* eslint-disable security/detect-object-injection */
-            return `${base} ${text[textTransform]} ${
-                borders[borderThickness]
-            } ${sizes[size]} ${corners[rounded]}`;
+            return `${base} ${text[textTransform]} ${borders[borderThickness]} ${sizes[size]} ${corners[rounded]}`;
             /* eslint-enable security/detect-object-injection */
         };
 
