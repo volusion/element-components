@@ -109,65 +109,74 @@ const factory = (
             rounded,
             growOnHover
         }) => {
-            const base = css(classes.baseStyles);
+            const base = classes.baseStyles;
             const borders = {
-                basic: css(classes.borderBasic),
-                thin: css(classes.borderThin),
-                thick: css(classes.borderThick),
-                none: css(classes.borderNone)
+                basic: classes.borderBasic,
+                thin: classes.borderThin,
+                thick: classes.borderThick,
+                none: classes.borderNone
             };
             const sizes = {
-                small: css(classes.sizeSmall),
-                medium: css(classes.sizeMedium),
-                large: css(classes.sizeLarge),
-                block: css(classes.sizeBlock)
+                small: classes.sizeSmall,
+                medium: classes.sizeMedium,
+                large: classes.sizeLarge,
+                block: classes.sizeBlock
             };
             const corners = {
-                none: css(classes.cornerNone),
-                small: css(classes.cornerSmall),
-                medium: css(classes.cornerMedium),
-                large: css(classes.cornerLarge),
-                pill: css(classes.cornerPill)
+                none: classes.cornerNone,
+                small: classes.cornerSmall,
+                medium: classes.cornerMedium,
+                large: classes.cornerLarge,
+                pill: classes.cornerPill
             };
             const weight = {
-                300: css(classes.weight300),
-                400: css(classes.weight400),
-                500: css(classes.weight500),
-                600: css(classes.weight600),
-                700: css(classes.weight700),
-                800: css(classes.weight800),
-                900: css(classes.weight900)
+                300: classes.weight300,
+                400: classes.weight400,
+                500: classes.weight500,
+                600: classes.weight600,
+                700: classes.weight700,
+                800: classes.weight800,
+                900: classes.weight900
             };
             const text = {
-                none: css(classes.textTransformNone),
-                capitalize: css(classes.textTransformCapitalize),
-                lowercase: css(classes.textTransformLowercase),
-                uppercase: css(classes.textTransformUppercase)
+                none: classes.textTransformNone,
+                capitalize: classes.textTransformCapitalize,
+                lowercase: classes.textTransformLowercase,
+                uppercase: classes.textTransformUppercase
             };
 
             const spacing = {
-                none: '',
-                tracked: css(classes.spacingTracked),
-                tight: css(classes.spacingTight),
-                mega: css(classes.spacingMega)
+                none: null,
+                tracked: classes.spacingTracked,
+                tight: classes.spacingTight,
+                mega: classes.spacingMega
             };
 
-            const grow = growOnHover ? css(classes.grow) : '';
+            const grow = growOnHover ? classes.grow : null;
 
             /* eslint-disable security/detect-object-injection */
-            return `${base} ${text[textTransform]} ${weight[fontWeight]} ${borders[borderThickness]} ${sizes[size]} ${corners[rounded]} ${spacing[letterSpacing]} ${grow}`;
+            return css(
+                base,
+                text[textTransform],
+                weight[fontWeight],
+                borders[borderThickness],
+                sizes[size],
+                corners[rounded],
+                spacing[letterSpacing],
+                grow
+            );
             /* eslint-enable security/detect-object-injection */
         };
 
         getButtonClasses = (role, styles) => {
-            const baseStyles = `tc link ${this.configClasses(styles)}`;
+            const configStyles = this.configClasses(styles);
             if (role === 'secondary') {
-                return `${baseStyles} ${css(
+                return `${configStyles} ${css(
                     classes.secondaryButton,
                     classes.secondaryButtonHover
                 )}`;
             } else {
-                return `${baseStyles} ${css(
+                return `${configStyles} ${css(
                     classes.primaryButton,
                     classes.primaryButtonHover
                 )}`;
