@@ -1,0 +1,15 @@
+sudo: required
+language: node_js
+node_js:
+    - '12.14.1'
+install:
+    - npm ci
+matrix:
+    fast_finish: true
+    include:
+        - name: 'Build'
+          script:
+              - npm run build
+        - name: 'Lint'
+          script:
+              - npm run lint
