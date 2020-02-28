@@ -3,7 +3,7 @@
   "version": "1.0.6",
   "description": "Collection of reusable components across Element blocks",
   "main": "lib/index.js",
-  "author": "Volusion LLC",
+  "author": "Volusion, LLC",
   "license": "MIT",
   "module": "es/index.js",
   "files": [
@@ -12,12 +12,6 @@
   ],
   "publishConfig": {
     "access": "public"
-  },
-  "scripts": {
-    "build": "rollup -c",
-    "prepublish": "npm run build",
-    "release": "npm run prepublish && np",
-    "watch": "rollup -c --watch"
   },
   "dependencies": {},
   "devDependencies": {
@@ -43,5 +37,13 @@
     "rollup-plugin-node-resolve": "^3.4.0",
     "rollup-plugin-replace": "^2.2.0",
     "rollup-plugin-uglify": "^4.0.0"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "prepublish": "npm run lint && npm run build",
+    "release": "npm run prepublish && np",
+    "watch": "rollup -c --watch"
   }
 }
