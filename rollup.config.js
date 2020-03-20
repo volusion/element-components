@@ -9,10 +9,27 @@ const name = 'ElementComponents';
 
 function standardBuilds() {
     return {
+        external: ['react', 'react-dom'],
         input: ['src/index.js'],
         output: [
-            { dir: 'lib', format: 'cjs', name },
-            { dir: 'es', format: 'es', name }
+            {
+                dir: 'lib',
+                format: 'cjs',
+                name,
+                globals: {
+                    react: 'React',
+                    'react-dom': 'ReactDOM'
+                }
+            },
+            {
+                dir: 'es',
+                format: 'es',
+                name,
+                globals: {
+                    react: 'React',
+                    'react-dom': 'ReactDOM'
+                }
+            }
         ],
         plugins: [
             typescript(),
@@ -41,10 +58,14 @@ function devBuild() {
         output: {
             file: 'dist/component.umd.js',
             format: 'umd',
+            globals: {
+                react: 'React',
+                'react-dom': 'ReactDOM'
+            },
             name,
             sourcemap: true
         },
-        external: ['aphrodite'],
+        external: ['aphrodite', 'react', 'react-dom'],
         plugins: [
             eslint({
                 throwOnError: true
