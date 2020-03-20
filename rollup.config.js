@@ -3,6 +3,7 @@ import commonjs from 'rollup-plugin-commonjs';
 import resolve from 'rollup-plugin-node-resolve';
 import replace from 'rollup-plugin-replace';
 import eslint from 'rollup-plugin-eslint';
+import typescript from '@rollup/plugin-typescript';
 
 const name = 'ElementComponents';
 
@@ -14,6 +15,7 @@ function standardBuilds() {
             { dir: 'es', format: 'es', name }
         ],
         plugins: [
+            typescript(),
             babel({
                 plugins: ['external-helpers'],
                 exclude: ['node_modules/**']
@@ -47,6 +49,7 @@ function devBuild() {
             eslint({
                 throwOnError: true
             }),
+            typescript(),
             babel({
                 plugins: ['external-helpers'],
                 exclude: ['node_modules/**']
