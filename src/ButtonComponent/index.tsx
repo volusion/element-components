@@ -15,12 +15,13 @@ const Button = ({ buttonStyle, href, text, globalSettings }: ButtonProps) => {
             ...volComponentButton.secondaryButtonStyles
         }
     };
+
     const classes: any = StyleSheet.create(getStyles(mergedStyles));
 
     const styles: BaseButtonStylesConfig =
         buttonStyle === 'secondary'
-            ? mergedStyles.primary
-            : mergedStyles.secondary;
+            ? mergedStyles.secondary
+            : mergedStyles.primary;
 
     const getButtonClasses = (
         role: string,
