@@ -1,9 +1,7 @@
 import { BaseButtonStylesConfig } from './types';
-import { AphroditeProps } from '../../types';
 
 export const getConfigClasses = (
-    // TODO Remove 'any' type
-    aphroditeProps: AphroditeProps,
+    aphroditeProps: any,
     {
         fontWeight,
         letterSpacing,
@@ -15,27 +13,27 @@ export const getConfigClasses = (
     }: BaseButtonStylesConfig
 ): any => {
     const { classes, css } = aphroditeProps;
-    const base = classes.baseStyles;
-    const borders = {
+    const base: any = classes.baseStyles;
+    const borders: any = {
         basic: classes.borderBasic,
         thin: classes.borderThin,
         thick: classes.borderThick,
         none: classes.borderNone
     };
-    const sizes = {
+    const sizes: any = {
         small: classes.sizeSmall,
         medium: classes.sizeMedium,
         large: classes.sizeLarge,
         block: classes.sizeBlock
     };
-    const corners = {
+    const corners: any = {
         none: classes.cornerNone,
         small: classes.cornerSmall,
         medium: classes.cornerMedium,
         large: classes.cornerLarge,
         pill: classes.cornerPill
     };
-    const weight = {
+    const weight: any = {
         300: classes.weight300,
         400: classes.weight400,
         500: classes.weight500,
@@ -44,21 +42,19 @@ export const getConfigClasses = (
         800: classes.weight800,
         900: classes.weight900
     };
-    const text = {
+    const text: any = {
         none: classes.textTransformNone,
         capitalize: classes.textTransformCapitalize,
         lowercase: classes.textTransformLowercase,
         uppercase: classes.textTransformUppercase
     };
-
-    const spacing = {
+    const spacing: any = {
         none: null,
         tracked: classes.spacingTracked,
         tight: classes.spacingTight,
         mega: classes.spacingMega
     };
-
-    const grow = growOnHover ? classes.grow : null;
+    const grow: any = growOnHover ? classes.grow : null;
 
     /* eslint-disable security/detect-object-injection */
     return css(

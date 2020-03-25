@@ -17,14 +17,22 @@ const Button = ({
     globalSettings
 }: ButtonComponentProps) => {
     const mergedStyles = mergedComponentStyles(defaultConfig, globalSettings);
-    // TODO: Ugh, remove 'any' type
+
     const classes: any = StyleSheet.create(getStyles(mergedStyles));
+
     const classExtensions = className ? className : '';
+
     const aphroditeProps = {
         StyleSheet,
         classes,
         css
     };
+
+    const styles: BaseButtonStylesConfig =
+        buttonStyle === 'secondary'
+            ? mergedStyles.secondary
+            : mergedStyles.primary;
+
     const getButtonClasses = (
         role: string,
         styles: BaseButtonStylesConfig
@@ -42,11 +50,6 @@ const Button = ({
             )}`;
         }
     };
-
-    const styles: BaseButtonStylesConfig =
-        buttonStyle === 'secondary'
-            ? mergedStyles.secondary
-            : mergedStyles.primary;
 
     return (
         <React.Fragment>
