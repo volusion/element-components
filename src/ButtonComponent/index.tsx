@@ -1,43 +1,33 @@
 import React from 'react';
 import { ElementPropTypes } from '@volusion/element-proptypes';
 import { StyleSheet, css } from 'aphrodite';
-import { getStyles, mergedComponentStyles } from './getStyles';
-import {
-    BlockSettingsProps,
-    ButtonComponentProps,
-    BaseButtonStylesConfig
-} from './types';
-import { getConfigClasses } from './getConfigClasses';
+import { getStyles } from './getStyles';
+import { BaseButtonStylesConfig, ButtonProps, ButtonConfig } from './types';
+import { getBaseStyles } from './getBaseStyles';
 
-const Button = ({
-    className,
-    buttonStyle,
-    href,
-    text,
-    globalSettings
-}: ButtonComponentProps) => {
-    const mergedStyles = mergedComponentStyles(defaultConfig, globalSettings);
-
-    const classes: any = StyleSheet.create(getStyles(mergedStyles));
-
-    const classExtensions = className ? className : '';
-
-    const aphroditeProps = {
-        StyleSheet,
-        classes,
-        css
+const Button = ({ buttonStyle, href, text, globalSettings }: ButtonProps) => {
+    const { volComponentButton } = globalSettings.globalComponents;
+    const mergedStyles = {
+        primary: {
+            ...volComponentButton.primaryButtonStyles
+        },
+        secondary: {
+            ...volComponentButton.secondaryButtonStyles
+        }
     };
+    const classes: any = StyleSheet.create(getStyles(mergedStyles));
 
     const styles: BaseButtonStylesConfig =
         buttonStyle === 'secondary'
-            ? mergedStyles.secondary
-            : mergedStyles.primary;
+            ? mergedStyles.primary
+            : mergedStyles.secondary;
 
     const getButtonClasses = (
         role: string,
         styles: BaseButtonStylesConfig
     ): string => {
-        const baseStyles = getConfigClasses(aphroditeProps, styles);
+        const baseStyles = getBaseStyles(classes, styles);
+
         if (role === 'secondary') {
             return `${baseStyles} ${css(
                 classes.secondaryButton,
@@ -54,21 +44,11 @@ const Button = ({
     return (
         <React.Fragment>
             {href ? (
-                <a
-                    className={`${getButtonClasses(
-                        buttonStyle,
-                        styles
-                    )} ${classExtensions}`}
-                >
+                <a className={`${getButtonClasses(buttonStyle, styles)}`}>
                     {text}
                 </a>
             ) : (
-                <button
-                    className={`${getButtonClasses(
-                        buttonStyle,
-                        styles
-                    )} ${classExtensions}`}
-                >
+                <button className={`${getButtonClasses(buttonStyle, styles)}`}>
                     {text}
                 </button>
             )}
@@ -78,13 +58,13 @@ const Button = ({
 
 export const block = Button;
 
-export const defaultConfig: BlockSettingsProps = {
+export const defaultConfig: ButtonConfig = {
     buttonStyle: 'primary',
     className: '',
     href: '',
     text: 'My Button'
-    // Not sure about this...
 };
+
 export const configSchema = {
     text: {
         label: 'Button Text',

@@ -1,29 +1,7 @@
-import {
-    BlockSettingsProps,
-    GlobalSettings,
-    MergedConfigStyles
-} from './types';
-
-export const mergedComponentStyles = (
-    defaultConfig: BlockSettingsProps,
-    globalSettings: GlobalSettings
-): MergedConfigStyles => {
-    const buttonGlobalStyles =
-        globalSettings.globalComponents.volComponentButton;
-    return {
-        primary: {
-            ...defaultConfig.primaryButtonStyles,
-            ...(buttonGlobalStyles || {}).primaryButtonStyles
-        },
-        secondary: {
-            ...defaultConfig.secondaryButtonStyles,
-            ...(buttonGlobalStyles || {}).secondaryButtonStyles
-        }
-    };
-};
+import { MergedStyles } from './types';
 
 // TODO: Change 'any' type to return type from Aphrodite
-export const getStyles = ({ primary, secondary }: MergedConfigStyles): any => {
+export const getStyles = ({ primary, secondary }: MergedStyles): any => {
     return {
         baseStyles: {
             textAlign: 'center',

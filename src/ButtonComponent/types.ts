@@ -1,11 +1,12 @@
-export interface BlockSettingsProps {
+export interface ButtonConfig {
     buttonStyle: string;
     className: string;
     href: string;
     text: string;
-    // Not sure about these...
-    primaryButtonStyles?: BaseButtonStylesConfig;
-    secondaryButtonStyles?: BaseButtonStylesConfig;
+}
+
+export interface ButtonProps extends ButtonConfig {
+    globalSettings: GlobalSettings;
 }
 
 export interface BaseButtonStylesConfig {
@@ -29,7 +30,7 @@ export interface VolComponentButton {
     secondaryButtonStyles: BaseButtonStylesConfig;
 }
 
-export interface MergedConfigStyles {
+export interface MergedStyles {
     primary: BaseButtonStylesConfig;
     secondary: BaseButtonStylesConfig;
 }
@@ -38,8 +39,4 @@ export interface GlobalSettings {
     globalComponents: {
         volComponentButton: VolComponentButton;
     };
-}
-
-export interface ButtonComponentProps extends BlockSettingsProps {
-    globalSettings: GlobalSettings;
 }

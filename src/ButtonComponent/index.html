@@ -78,19 +78,17 @@
 
     var ElementPropTypes = window.ElementSdk.ElementPropTypes;
 
+    var blockSettings = {
+      buttonStyle: "primary", // 'primary' or 'secondary'
+      href: "#",
+      text: "My Button Component"
+    };
+
     var buttonPrimary = React.createElement(
       ElementComponents.ButtonComponent.block,
-      { globalSettings }
+      { ...blockSettings, globalSettings }
     );
 
-    var buttonSecondary = React.createElement(
-      ElementComponents.ButtonComponent.block,
-      { globalSettings }
-    );
-
-    ReactDOM.render(
-      [buttonPrimary, buttonSecondary],
-      document.getElementById("root")
-    );
+    ReactDOM.render(buttonPrimary, document.getElementById("root"));
   </script>
 </html>
