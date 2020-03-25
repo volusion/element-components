@@ -5,7 +5,13 @@ import { getStyles } from './getStyles';
 import { ButtonProps, ButtonConfig } from './types';
 import { getConfigClasses } from './getConfigClasses';
 
-const Button = ({ buttonStyle, href, text, globalSettings }: ButtonProps) => {
+const Button = ({
+    buttonStyle,
+    href,
+    text,
+    newWindow,
+    globalSettings
+}: ButtonProps) => {
     const { volComponentButton } = globalSettings.globalComponents;
     const { primaryButtonStyles, secondaryButtonStyles } = volComponentButton;
     const classes: any = StyleSheet.create(getStyles(volComponentButton));
@@ -32,7 +38,11 @@ const Button = ({ buttonStyle, href, text, globalSettings }: ButtonProps) => {
     return (
         <React.Fragment>
             {href ? (
-                <a href={href} className={`${getButtonClasses(buttonStyle)}`}>
+                <a
+                    href={href}
+                    target={newWindow ? '_blank' : '_self'}
+                    className={`${getButtonClasses(buttonStyle)}`}
+                >
                     {text}
                 </a>
             ) : (
@@ -48,22 +58,26 @@ export const block = Button;
 
 export const defaultConfig: ButtonConfig = {
     buttonStyle: 'primary',
-    className: '',
     href: '',
-    text: 'My Button'
+    text: 'My Button',
+    newWindow: false
 };
 
 export const configSchema = {
+    buttonStyle: {
+        label: 'Button Style',
+        type: ElementPropTypes.oneOf('primary', 'secondary')
+    },
+    href: {
+        label: 'Button Link',
+        type: ElementPropTypes.string
+    },
     text: {
         label: 'Button Text',
         type: ElementPropTypes.string
     },
-    target: {
-        label: 'Button Target',
-        type: ElementPropTypes.oneOf(['_self', '_blank'])
-    },
-    link: {
-        label: 'Button Link',
-        type: ElementPropTypes.string
+    newWindow: {
+        label: 'Open link in a new window',
+        type: ElementPropTypes.bool
     }
 };

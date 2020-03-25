@@ -1,8 +1,8 @@
 export interface ButtonConfig {
     buttonStyle: string;
-    className: string;
     href: string;
     text: string;
+    newWindow: boolean;
 }
 
 export interface ButtonProps extends ButtonConfig {
