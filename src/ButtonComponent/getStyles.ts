@@ -1,7 +1,10 @@
-import { MergedStyles } from './types';
+import { VolComponentButton } from './types';
 
 // TODO: Change 'any' type to return type from Aphrodite
-export const getStyles = ({ primary, secondary }: MergedStyles): any => {
+export const getStyles = ({
+    primaryButtonStyles,
+    secondaryButtonStyles
+}: VolComponentButton): any => {
     return {
         baseStyles: {
             textAlign: 'center',
@@ -36,31 +39,19 @@ export const getStyles = ({ primary, secondary }: MergedStyles): any => {
         },
         sizeSmall: {
             fontSize: '.75rem',
-            paddingTop: '.25rem',
-            paddingBottom: '.25rem',
-            paddingLeft: '.5rem',
-            paddingRight: '.5rem'
+            padding: '.25rem .5rem'
         },
         sizeMedium: {
             fontSize: '.875rem',
-            paddingTop: '.5rem',
-            paddingBottom: '.5rem',
-            paddingLeft: '1rem',
-            paddingRight: '1rem'
+            padding: '.5rem 1rem'
         },
         sizeLarge: {
             fontSize: '1rem',
-            paddingTop: '1rem',
-            paddingBottom: '1rem',
-            paddingLeft: '2rem',
-            paddingRight: '2rem'
+            padding: '1rem 2rem'
         },
         sizeBlock: {
             fontSize: '1rem',
-            paddingTop: '1rem',
-            paddingBottom: '1rem',
-            paddingLeft: '2rem',
-            paddingRight: '2rem',
+            padding: '1rem 2rem',
             width: '100%',
             maxWidth: '30em'
         },
@@ -139,29 +130,29 @@ export const getStyles = ({ primary, secondary }: MergedStyles): any => {
             }
         },
         primaryButton: {
-            backgroundColor: primary.backgroundColor,
-            borderColor: primary.borderColor,
-            color: primary.textColor || 'white'
+            backgroundColor: primaryButtonStyles.backgroundColor,
+            borderColor: primaryButtonStyles.borderColor,
+            color: primaryButtonStyles.textColor || 'white'
         },
         primaryButtonHover: {
             ':hover': {
-                backgroundColor: primary.hoverBackgroundColor,
-                borderColor: primary.hoverBorderColor,
-                color: primary.hoverTextColor || 'white',
+                backgroundColor: primaryButtonStyles.hoverBackgroundColor,
+                borderColor: primaryButtonStyles.hoverBorderColor,
+                color: primaryButtonStyles.hoverTextColor || 'white',
                 textDecoration: 'none',
                 transition: 'all 0.2s ease-in-out'
             }
         },
         secondaryButton: {
-            backgroundColor: secondary.backgroundColor,
-            borderColor: secondary.borderColor,
-            color: secondary.textColor || 'white'
+            backgroundColor: secondaryButtonStyles.backgroundColor,
+            borderColor: secondaryButtonStyles.borderColor,
+            color: secondaryButtonStyles.textColor || 'white'
         },
         secondaryButtonHover: {
             ':hover': {
-                backgroundColor: secondary.hoverBackgroundColor,
-                borderColor: secondary.hoverBorderColor,
-                color: secondary.hoverTextColor || 'white',
+                backgroundColor: secondaryButtonStyles.hoverBackgroundColor,
+                borderColor: secondaryButtonStyles.hoverBorderColor,
+                color: secondaryButtonStyles.hoverTextColor || 'white',
                 textDecoration: 'none',
                 transition: 'all 0.2s ease-in-out'
             }
