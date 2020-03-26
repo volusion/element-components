@@ -1,56 +1,32 @@
 import React from 'react';
 import { ElementPropTypes } from '@volusion/element-proptypes';
-import { StyleSheet, css } from 'aphrodite';
-import { getStyles } from './getStyles';
+import { getClasses } from './getClasses';
 import { ButtonProps, ButtonConfig } from './types';
-import { getConfigClasses } from './getConfigClasses';
+import { LinkButton } from './LinkButton';
+import { StandardButton } from './StandardButton';
 
-const Button = ({
-    buttonStyle,
-    href,
-    text,
-    newWindow,
-    globalSettings
-}: ButtonProps) => {
-    const { volComponentButton } = globalSettings.globalComponents;
+const Button = (props: ButtonProps) => {
+    const { volComponentButton } = props.globalSettings.globalComponents;
     const { primaryButtonStyles, secondaryButtonStyles } = volComponentButton;
-    const classes: any = StyleSheet.create(getStyles(volComponentButton));
-    const primaryBaseClasses = getConfigClasses(classes, primaryButtonStyles);
-    const secondaryBaseClasses = getConfigClasses(
-        classes,
-        secondaryButtonStyles
-    );
 
-    const getButtonClasses = (role: string): string => {
-        if (role === 'secondary') {
-            return `${secondaryBaseClasses} ${css(
-                classes.secondaryButton,
-                classes.secondaryButtonHover
-            )}`;
-        } else {
-            return `${primaryBaseClasses} ${css(
-                classes.primaryButton,
-                classes.primaryButtonHover
-            )}`;
-        }
+    const BaseButton = (props: any) => {
+        const classes = getClasses(props.globalButtonSettings);
+        return props.href ? (
+            <LinkButton {...props} className={classes} />
+        ) : (
+            <StandardButton {...props} className={classes} />
+        );
     };
 
     return (
-        <React.Fragment>
-            {href ? (
-                <a
-                    href={href}
-                    target={newWindow ? '_blank' : '_self'}
-                    className={`${getButtonClasses(buttonStyle)}`}
-                >
-                    {text}
-                </a>
-            ) : (
-                <button className={`${getButtonClasses(buttonStyle)}`}>
-                    {text}
-                </button>
-            )}
-        </React.Fragment>
+        <BaseButton
+            {...props}
+            globalButtonSettings={
+                props.buttonStyle === 'primary'
+                    ? primaryButtonStyles
+                    : secondaryButtonStyles
+            }
+        />
     );
 };
 
