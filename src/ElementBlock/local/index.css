@@ -1,0 +1,40 @@
+html {
+    font-size: 16px;
+}
+body {
+    background: #fff;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.15;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+a {
+    color: #333;
+}
+a:link,
+a:visited {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+    color: #333;
+}
+a:active {
+    text-decoration: none;
+}
+button {
+    cursor: pointer;
+}
+button[disabled] {
+    cursor: not-allowed;
+}

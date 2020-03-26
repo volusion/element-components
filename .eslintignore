@@ -2,3 +2,7 @@
 dist
 lib
 es
+node_modules
+**/local/*.umd.*
+**/dist
+**/test/__snapshots__

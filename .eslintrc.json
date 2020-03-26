@@ -1,5 +1,5 @@
 {
-    "parser": "babel-eslint", 
+    "parser": "babel-eslint",
     "extends": [
         "eslint:recommended",
         "plugin:security/recommended",
@@ -12,13 +12,18 @@
         "es6": true,
         "node": true
     },
-    "plugins": ["prettier", "security"],
+    "plugins": ["prettier", "security", "react-hooks"],
     "rules": {
         "no-const-assign": "error",
+        "react/jsx-fragments": "off",
+        "react/jsx-handler-names": "off",
         "react/no-unused-prop-types": "off",
         "no-var": "error",
         "semi": "error",
         "prefer-const": "error",
+        "react/prop-types": [0],
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn",
         "prettier/prettier": [
             "error",
             {
@@ -27,5 +32,41 @@
                 "trailingComma": "none"
             }
         ]
-    }
+    },
+    "overrides": [
+        {
+            "files": ["**/local/**/index.js"],
+            "globals": {
+                "React": "readonly",
+                "ReactDOM": "readonly",
+                "aphrodite": "readonly"
+            },
+            "rules": {
+                "no-unused-vars": [
+                    "error",
+                    { "varsIgnorePattern": "globalStyles" }
+                ]
+            }
+        },
+        {
+            "files": [
+                "*.spec.js",
+                "*.test.js",
+                "**/__test__/**/*.js",
+                "**/test/**/*.js",
+                "utils/test-helpers/**/*.js"
+            ],
+            "env": {
+                "jest": true
+            },
+            "rules": {
+                "no-console": [
+                    "error",
+                    {
+                        "allow": ["error", "warn"]
+                    }
+                ]
+            }
+        }
+    ]
 }
