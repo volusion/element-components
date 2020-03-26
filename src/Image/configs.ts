@@ -3,7 +3,7 @@ import { ElementPropTypes } from '@volusion/element-proptypes';
 export const defaultConfig = {
     alt: '',
     height: 270,
-    src: '',
+    src: 'https://res.cloudinary.com/dyx4yhvoq/image/upload/v1545428185/images/tcp-no-image.jpg',
     title: '',
     width: 360
 };
@@ -11,7 +11,7 @@ export const defaultConfig = {
 export const configSchema = {
     src: {
         label: 'Image',
-        type: ElementPropTypes.string.required
+        type: ElementPropTypes.string
     },
     title: {
         label: 'Title',
@@ -19,14 +19,14 @@ export const configSchema = {
     },
     altText: {
         label: 'Alt Text',
-        type: ElementPropTypes.string.required
+        type: ElementPropTypes.string
     },
     width: {
         label: 'Width',
-        type: ElementPropTypes.string
+        type: ElementPropTypes.number
     },
     height: {
         label: 'Height',
-        type: ElementPropTypes.string
+        type: ElementPropTypes.number
     }
 };

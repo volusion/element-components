@@ -3,10 +3,10 @@ import React from 'react';
 interface ImageProps {
     alt: string;
     globalSettings: any; // TODO: Get rid of any
-    height: string;
+    height: number;
     src: string;
     title: string;
-    width: string;
+    width: number;
 }
 
 const Image = ({ alt, height, src, title, width }: ImageProps) => {
