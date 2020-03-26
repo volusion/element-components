@@ -5,6 +5,11 @@
       rel="stylesheet"
       href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"
     />
+    <script 
+      crossorigin 
+      async 
+      src="https://cdn.ampproject.org/v0.js"
+    ></script>
     <script
       crossorigin
       src="https://unpkg.com/react@16/umd/react.development.js"
@@ -84,6 +89,9 @@
       height: 270,
       src: 'https://res.cloudinary.com/dyx4yhvoq/image/upload/v1545428185/images/tcp-no-image.jpg',
       title: 'Image title',
+      utils: {
+        isAmpRequest: false
+      },
       width: 360,
     };
 

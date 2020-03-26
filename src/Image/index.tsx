@@ -1,25 +1,44 @@
-import React from 'react';
+import React, { CSSProperties } from 'react';
 
-interface ImageProps {
+interface ImgProps {
     alt: string;
-    globalSettings: any; // TODO: Get rid of any
-    height: number;
+    height?: number;
     src: string;
     title: string;
-    width: number;
+    width?: number;
 }
 
-const Image = ({ alt, height, src, title, width }: ImageProps) => {
-    return (
-        <picture>
-            <img
-                alt={alt}
-                height={height}
-                src={src}
-                title={title}
-                width={width}
-            />
-        </picture>
+interface AmpImgProps extends ImgProps {
+    layout: string;
+}
+
+// TODO: Get rid of the anys
+interface ImageProps extends ImgProps {
+    globalSettings: any;
+    utils: any;
+}
+
+const responsiveImgStyles: CSSProperties = {
+    width: '100%'
+};
+
+const AmpImg = (props: AmpImgProps) => <amp-img {...props} />;
+const Img = (props: ImgProps) => (
+    <picture>
+        <img
+            {...props}
+            style={props.height ? undefined : responsiveImgStyles}
+        />
+    </picture>
+);
+
+const Image = ({ alt, height, src, title, utils, width }: ImageProps) => {
+    const imgProps = { alt, height, src, title, width };
+
+    return utils.isAmpRequest ? (
+        <AmpImg layout="responsive" {...imgProps} />
+    ) : (
+        <Img {...imgProps} />
     );
 };
 
