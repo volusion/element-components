@@ -1,26 +1,5 @@
-// const path = require('path');
-
-// module.exports = {
-//     verbose: true,
-//     projects: [
-//         {
-//             runner: 'jest-runner-eslint',
-//             displayName: 'lint',
-//             testMatch: ['<rootDir>/**/*.js']
-//         },
-//         {
-//             displayName: 'test',
-//             snapshotSerializers: [
-//                 'enzyme-to-json/serializer',
-//                 'jest-aphrodite-react'
-//             ],
-//             setupFiles: [path.join(__dirname, 'jest.setup.ts')]
-//         }
-//     ]
-// };
-
 module.exports = {
-    setupTestFrameworkScriptFile: '<rootDir>/testConfig.ts',
+    setupFilesAfterEnv: ['<rootDir>/testConfig.ts'],
     moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
     moduleNameMapper: {
         '\\.(scss|css)$': 'identity-obj-proxy',
@@ -38,7 +17,7 @@ module.exports = {
         }
     },
     rootDir: '.',
-    // testRegex: '**/__tests__/**/*.(js|js)?(x),**/?(*.)+(spec|test).(js|ts)?(x)',
-    testRegex: 'src/ElementBlock/__test__/Block.spec.ts',
+    testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.[jt]sx?$',
+    // testRegex: 'src/ElementBlock/__test__/Block.spec.ts',
     verbose: true
 };
