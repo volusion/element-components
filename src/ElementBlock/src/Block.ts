@@ -4,7 +4,7 @@ import { getStyles } from './getStyles';
 
 import { defaultConfig } from './configs';
 
-const Block = props => {
+const Block = (props: {}) => {
     const classes = StyleSheet.create(getStyles(props));
     return <h1 className={css(classes.example)}>{props.text}</h1>;
 };
