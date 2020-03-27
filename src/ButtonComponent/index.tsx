@@ -1,7 +1,7 @@
 import React from 'react';
 import { ElementPropTypes } from '@volusion/element-proptypes';
 import { getClasses } from './getClasses';
-import { ButtonProps, ButtonConfig } from './types';
+import { ButtonProps, ButtonConfig, BaseButtonProps } from './types';
 import { LinkButton } from './LinkButton';
 import { StandardButton } from './StandardButton';
 
@@ -9,7 +9,7 @@ const Button = (props: ButtonProps) => {
     const { volComponentButton } = props.globalSettings.globalComponents;
     const { primaryButtonStyles, secondaryButtonStyles } = volComponentButton;
 
-    const BaseButton = (props: any) => {
+    const BaseButton = (props: BaseButtonProps) => {
         const classes = getClasses(props.globalButtonSettings);
         return props.href ? (
             <LinkButton {...props} className={classes} />

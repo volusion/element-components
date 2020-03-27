@@ -40,3 +40,16 @@ export interface GlobalSettings {
         volComponentButton: VolComponentButton;
     };
 }
+
+export type StyleProp = string | number;
+
+export interface Styles {
+    [key: string]: {
+        [key: string]: { [key: string]: StyleProp } | StyleProp;
+    };
+}
+
+export interface BaseButtonProps extends ButtonConfig {
+    className?: string;
+    globalButtonSettings: BaseButtonStylesConfig;
+}

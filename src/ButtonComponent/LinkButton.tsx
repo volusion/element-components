@@ -1,13 +1,12 @@
 import React from 'react';
+import { BaseButtonProps } from './types';
 
-interface Props {
-    className: string;
-    href: string;
-    newWindow: string;
-    text: string;
-}
-
-export const LinkButton = ({ text, href, newWindow, className }: Props) => (
+export const LinkButton = ({
+    text,
+    href,
+    newWindow,
+    className
+}: BaseButtonProps) => (
     <a
         href={href}
         target={newWindow ? '_blank' : '_self'}

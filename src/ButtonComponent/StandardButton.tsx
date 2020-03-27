@@ -1,12 +1,6 @@
 import React from 'react';
+import { BaseButtonProps } from './types';
 
-interface Props {
-    className: string;
-    href: string;
-    newWindow: string;
-    text: string;
-}
-
-export const StandardButton = ({ text, className }: Props) => (
+export const StandardButton = ({ text, className }: BaseButtonProps) => (
     <a className={className}>{text}</a>
 );

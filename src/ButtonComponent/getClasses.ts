@@ -1,10 +1,10 @@
 import { baseStyles } from './baseStyles';
 import { StyleSheet, css } from 'aphrodite';
 import { getConfigClasses } from './getConfigClasses';
-import { BaseButtonStylesConfig } from './types';
+import { BaseButtonStylesConfig, Styles } from './types';
 
 export const getClasses = (buttonSettings: BaseButtonStylesConfig) => {
-    const styles: any = {
+    const styles: Styles = {
         ...baseStyles,
         button: {
             backgroundColor: buttonSettings.backgroundColor,
@@ -21,7 +21,7 @@ export const getClasses = (buttonSettings: BaseButtonStylesConfig) => {
             }
         }
     };
-    const classes: any = StyleSheet.create(styles);
+    const classes = StyleSheet.create(styles);
     const configClasses = getConfigClasses(classes, buttonSettings);
 
     return `${configClasses} ${css(classes.button, classes.buttonHover)}`;
