@@ -78,18 +78,31 @@
 
     var ElementPropTypes = window.ElementSdk.ElementPropTypes;
 
-    var buttonSettings = {
+    var primaryBlockSettings = {
       buttonStyle: "primary", // 'primary' or 'secondary'
       href: "#",
       text: "Primary Button",
       newWindow: true
     };
 
-    var button = React.createElement(ElementComponents.ButtonComponent.block, {
-      ...buttonSettings,
-      globalSettings
-    });
+    var secondaryBlockSettings = {
+      buttonStyle: "secondary", // 'primary' or 'secondary'
+      text: "Secondary Button"
+    };
 
-    ReactDOM.render(button, document.getElementById("root"));
+    var buttonPrimary = React.createElement(
+      ElementComponents.ButtonComponent.block,
+      { ...primaryBlockSettings, globalSettings }
+    );
+
+    var secondaryButton = React.createElement(
+      ElementComponents.ButtonComponent.block,
+      { ...secondaryBlockSettings, globalSettings }
+    );
+
+    ReactDOM.render(
+      [buttonPrimary, secondaryButton],
+      document.getElementById("root")
+    );
   </script>
 </html>

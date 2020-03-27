@@ -12,8 +12,9 @@ export const getConfigClasses = (
         rounded,
         growOnHover
     }: BaseButtonStylesConfig
-): any => {
+): string => {
     const base: any = classes.baseStyles;
+
     const borders: any = {
         basic: classes.borderBasic,
         thin: classes.borderThin,
@@ -54,18 +55,23 @@ export const getConfigClasses = (
         tight: classes.spacingTight,
         mega: classes.spacingMega
     };
+
     const grow: any = growOnHover ? classes.grow : null;
 
-    /* eslint-disable security/detect-object-injection */
+    const getValue = (obj: {}, key: string): any => {
+        const keys = Object.keys(obj);
+        const values = Object.values(obj);
+        return values[keys.indexOf(key)];
+    };
+
     return css(
         base,
-        text[textTransform],
-        weight[fontWeight],
-        borders[borderThickness],
-        sizes[size],
-        corners[rounded],
-        spacing[letterSpacing],
+        getValue(text, textTransform),
+        getValue(weight, fontWeight),
+        getValue(borders, borderThickness),
+        getValue(sizes, size),
+        getValue(corners, rounded),
+        getValue(spacing, letterSpacing),
         grow
     );
-    /* eslint-enable security/detect-object-injection */
 };
