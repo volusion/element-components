@@ -1,11 +1,11 @@
-import { StyleSheet, css } from 'aphrodite';
+import { StyleSheet } from 'aphrodite';
 import {
     BaseButtonStylesConfig,
-    Styles,
     BorderRadius,
     BorderThickness,
     Size,
-    Spacing
+    Spacing,
+    Styles
 } from './types';
 
 const getBorderRadius = (cornerStyle: BorderRadius) => {
@@ -111,7 +111,13 @@ export const getClasses = (buttonSettings: BaseButtonStylesConfig) => {
             textDecoration: 'none',
             textTransform: buttonSettings.textTransform,
             transition: 'color .15s ease-in',
-            ':hover': { transition: 'color .15s ease-in' },
+            ':hover': {
+                backgroundColor: buttonSettings.hoverBackgroundColor,
+                borderColor: buttonSettings.hoverBorderColor,
+                color: buttonSettings.hoverTextColor || 'white',
+                textDecoration: 'none',
+                transition: 'all .2s ease-in-out'
+            },
             ':active': { transition: 'color .15s ease-in' },
             ':visited': { transition: 'color .15s ease-in' },
             ':link': { transition: 'color .15s ease-in' },
@@ -122,18 +128,8 @@ export const getClasses = (buttonSettings: BaseButtonStylesConfig) => {
             ...getBorders(buttonSettings.borderThickness),
             ...getSizes(buttonSettings.size),
             ...getGrowOnHover(buttonSettings.growOnHover)
-        },
-        buttonHover: {
-            ':hover': {
-                backgroundColor: buttonSettings.hoverBackgroundColor,
-                borderColor: buttonSettings.hoverBorderColor,
-                color: buttonSettings.hoverTextColor || 'white',
-                textDecoration: 'none',
-                transition: 'all .2s ease-in-out'
-            }
         }
     };
-    const classes = StyleSheet.create(styles);
 
-    return `${css(classes.button, classes.buttonHover)}`;
+    return StyleSheet.create(styles);
 };

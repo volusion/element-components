@@ -37,11 +37,6 @@ export interface VolComponentButton {
     secondaryButtonStyles: BaseButtonStylesConfig;
 }
 
-export interface MergedStyles {
-    primary: BaseButtonStylesConfig;
-    secondary: BaseButtonStylesConfig;
-}
-
 export interface GlobalSettings {
     globalComponents: {
         volComponentButton: VolComponentButton;

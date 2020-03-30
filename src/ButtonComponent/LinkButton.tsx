@@ -7,11 +7,7 @@ export const LinkButton = ({
     newWindow,
     className
 }: BaseButtonProps) => (
-    <a
-        href={href}
-        target={newWindow ? '_blank' : '_self'}
-        className={className}
-    >
-        {text}
+    <a href={href} target={newWindow ? '_blank' : '_self'}>
+        <button className={className}>{text}</button>
     </a>
 );

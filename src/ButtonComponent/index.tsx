@@ -1,5 +1,6 @@
 import React from 'react';
 import { ElementPropTypes } from '@volusion/element-proptypes';
+import { css } from 'aphrodite';
 import { getClasses } from './getClasses';
 import { ButtonProps, ButtonConfig, BaseButtonProps } from './types';
 import { LinkButton } from './LinkButton';
@@ -13,9 +14,9 @@ const Button = (props: ButtonProps) => {
         /* eslint react/prop-types: 0 */
         const classes = getClasses(props.globalButtonSettings);
         return props.href ? (
-            <LinkButton {...props} className={classes} />
+            <LinkButton {...props} className={css(classes.button)} />
         ) : (
-            <StandardButton {...props} className={classes} />
+            <StandardButton {...props} className={css(classes.button)} />
         );
     };
 
