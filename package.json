@@ -13,64 +13,41 @@
     "publishConfig": {
         "access": "public"
     },
-    "dependencies": {
-        "@volusion/element-block-utils": "^1.0.1",
-        "jest": "^25.2.2"
+    "resolutions": {
+        "**/**/node-gyp": "5.0.0"
     },
     "devDependencies": {
-        "@types/enzyme": "^3.10.5",
-        "@types/enzyme-adapter-react-16": "^1.0.6",
-        "@types/jest": "^25.1.4",
-        "@types/node": "^13.9.4",
-        "@types/prop-types": "^15.7.3",
-        "@types/react": "^16.9.26",
-        "@types/react-dom": "^16.9.5",
         "@volusion/element-block-scripts": "^2.2.1",
         "@volusion/element-components": "^1.0.6",
         "@volusion/element-proptypes": "^1.1.1",
         "aphrodite": "^2.4.0",
-        "babel-core": "^6.26.3",
-        "babel-eslint": "^8.2.6",
-        "babel-plugin-external-helpers": "^6.22.0",
+        "babel-eslint": "^10.1.0",
         "babel-preset-env": "^1.7.0",
-        "babel-preset-latest": "^6.24.1",
         "babel-preset-react": "^6.24.1",
         "babel-preset-stage-1": "^6.24.1",
         "enzyme": "^3.11.0",
         "enzyme-adapter-react-16": "^1.15.2",
         "enzyme-to-json": "^3.4.4",
-        "eslint": "^4.19.1",
-        "eslint-config-prettier": "^2.10.0",
-        "eslint-config-standard-react": "^6.0.0",
-        "eslint-plugin-prettier": "^2.7.0",
+        "eslint-config-prettier": "^3.4.0",
+        "eslint-config-standard-react": "^7.0.2",
+        "eslint-plugin-prettier": "^3.1.2",
         "eslint-plugin-react": "^7.19.0",
         "eslint-plugin-react-hooks": "^2.5.0",
-        "eslint-plugin-security": "^1.4.0",
+        "jest": "^23.6.0",
         "jest-aphrodite-react": "^2.2.0",
         "jest-runner-eslint": "^0.7.6",
-        "np": "^3.1.0",
-        "prettier": "^2.0.2",
+        "prettier": "^1.19.1",
         "react": "^16.13.0",
-        "react-dom": "^16.13.0",
-        "rollup": "^0.59.4",
-        "rollup-plugin-babel": "^3.0.7",
-        "rollup-plugin-commonjs": "^9.3.4",
-        "rollup-plugin-eslint": "^4.0.0",
-        "rollup-plugin-node-resolve": "^3.4.0",
-        "rollup-plugin-replace": "^2.2.0",
-        "rollup-plugin-typescript": "^1.0.1",
-        "rollup-plugin-uglify": "^4.0.0",
-        "ts-jest": "^25.2.1",
-        "typescript": "^3.8.3"
+        "react-dom": "^16.13.0"
+    },
+    "dependencies": {
+        "@volusion/element-block-utils": "^1.0.1",
+        "react-stripe-elements": "^4.0.2"
     },
     "scripts": {
-        "build": "rollup -c",
         "lint": "eslint .",
-        "lint:fix": "eslint . --fix",
-        "prepublish": "npm run lint && npm run build",
-        "release": "npm run prepublish && np",
-        "watch": "rollup -c --watch",
-        "test": "jest --watch",
-        "start": "block-scripts start"
+        "test": "jest \"$INIT_CWD\" --watch",
+        "start": "block-scripts start",
+        "build": "block-scripts build"
     }
 }

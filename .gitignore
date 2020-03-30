@@ -1,8 +1,7 @@
-**/dist
-**/build
-**/local/component.*
 node_modules
-lib
-es
+dist
+**/local/*.umd.*
 .eslintcache
+.envrc
 .vscode
+default.nix
