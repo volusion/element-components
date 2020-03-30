@@ -1,6 +1,7 @@
+**/dist
+**/build
+**/local/component.*
 node_modules
-dist
-build
 lib
 es
 .eslintcache
