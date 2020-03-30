@@ -15,6 +15,7 @@ export type BorderThickness = 'none' | 'basic' | 'thin' | 'thick';
 type TextTransform = 'none' | 'capitalize' | 'lowercase' | 'uppercase';
 export type Size = 'small' | 'medium' | 'large' | 'block';
 export type Spacing = 'none' | 'tracked' | 'tight' | 'mega';
+
 export interface BaseButtonStylesConfig {
     textColor: string;
     hoverTextColor: string;
