@@ -2,6 +2,7 @@ import React from 'react';
 import { mount, render } from 'enzyme';
 import { block as ButtonComponent, defaultConfig } from './index';
 import { ButtonProps } from './types';
+import { mockGlobalSettings as globalSettings } from './__fixtures__/mockGlobalSettings';
 
 describe('Button component', () => {
     let props: ButtonProps;
@@ -9,42 +10,7 @@ describe('Button component', () => {
     beforeEach(() => {
         props = {
             ...defaultConfig,
-            globalSettings: {
-                globalComponents: {
-                    volComponentButton: {
-                        primaryButtonStyles: {
-                            size: 'large',
-                            rounded: 'none',
-                            textColor: '#fff',
-                            fontWeight: '700',
-                            borderColor: 'rgba(247, 67, 186, 1)',
-                            growOnHover: true,
-                            letterSpacing: 'none',
-                            textTransform: 'none',
-                            hoverTextColor: '#fff',
-                            backgroundColor: 'rgba(247, 68, 186, 1)',
-                            borderThickness: 'none',
-                            hoverBorderColor: 'rgba(0, 0, 0, 1)',
-                            hoverBackgroundColor: 'rgba(218, 15, 148, 1)'
-                        },
-                        secondaryButtonStyles: {
-                            size: 'large',
-                            rounded: 'none',
-                            textColor: '#fff',
-                            fontWeight: '700',
-                            borderColor: 'rgba(247, 67, 186, 1)',
-                            growOnHover: true,
-                            letterSpacing: 'none',
-                            textTransform: 'none',
-                            hoverTextColor: '#fff',
-                            backgroundColor: 'rgba(247, 68, 186, 1)',
-                            borderThickness: 'none',
-                            hoverBorderColor: 'rgba(0, 0, 0, 1)',
-                            hoverBackgroundColor: 'rgba(218, 15, 148, 1)'
-                        }
-                    }
-                }
-            }
+            globalSettings
         };
     });
 
