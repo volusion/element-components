@@ -21,7 +21,7 @@ describe('Image component', () => {
     expect(rendered).toMatchSnapshot();
   });
 
-  it('should have an img tag when not a normal request', () => {
+  it('should have an img tag when a normal request', () => {
     const image = mount(<Image {...props} />);
     expect(image.find('img').exists()).toBeTruthy();
   });
@@ -36,9 +36,11 @@ describe('Image component', () => {
   it('should change alt text and title when given props', () => {
     props.alt = 'fake alt text';
     props.title = 'fake title';
+    props.src = 'https://www.fakeimgsrc.com/fake/image.jpg';
     const image = mount(<Image {...props} />);
     expect(image.find('img').prop('alt')).toEqual(props.alt);
     expect(image.find('img').prop('title')).toEqual(props.title);
+    expect(image.find('img').prop('src')).toEqual(props.src);
     expect(image.render()).toMatchSnapshot();
   });
 });

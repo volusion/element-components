@@ -18,7 +18,7 @@ exports[`Image component should change alt text and title when given props 1`] =
   <img
     alt="fake alt text"
     height="270"
-    src="https://res.cloudinary.com/dyx4yhvoq/image/upload/v1545428185/images/tcp-no-image.jpg"
+    src="https://www.fakeimgsrc.com/fake/image.jpg"
     style="max-width: 100%;"
     title="fake title"
     width="360"
