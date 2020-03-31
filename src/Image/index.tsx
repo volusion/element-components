@@ -1,4 +1,5 @@
 import React, { CSSProperties } from 'react';
+import { BlockUtils, GlobalSettings } from '../types';
 
 interface ImgProps {
     alt: string;
@@ -12,10 +13,9 @@ interface AmpImgProps extends ImgProps {
     layout: string;
 }
 
-// TODO: Get rid of the anys
 export interface ImageProps extends ImgProps {
-    globalSettings: any;
-    utils: any;
+    globalSettings: GlobalSettings;
+    utils: BlockUtils;
 }
 
 const responsiveImgStyles: CSSProperties = {

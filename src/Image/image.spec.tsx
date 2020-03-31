@@ -33,7 +33,7 @@ describe('Image component', () => {
     expect(image.find('amp-img').exists()).toBeTruthy();
   });
 
-  it('should change alt text and title when given props', () => {
+  it('should change src, alt text, and title when given props', () => {
     props.alt = 'fake alt text';
     props.title = 'fake title';
     props.src = 'https://www.fakeimgsrc.com/fake/image.jpg';

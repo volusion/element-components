@@ -13,7 +13,7 @@ exports[`Image component matches snapshot 1`] = `
 </picture>
 `;
 
-exports[`Image component should change alt text and title when given props 1`] = `
+exports[`Image component should change src, alt text, and title when given props 1`] = `
 <picture>
   <img
     alt="fake alt text"
