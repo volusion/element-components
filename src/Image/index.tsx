@@ -2,10 +2,10 @@ import React, { CSSProperties } from 'react';
 
 interface ImgProps {
     alt: string;
-    height?: number;
+    height: number;
     src: string;
     title: string;
-    width?: number;
+    width: number;
 }
 
 interface AmpImgProps extends ImgProps {
@@ -19,16 +19,13 @@ interface ImageProps extends ImgProps {
 }
 
 const responsiveImgStyles: CSSProperties = {
-    width: '100%'
+    maxWidth: '100%'
 };
 
 const AmpImg = (props: AmpImgProps) => <amp-img {...props} />;
 const Img = (props: ImgProps) => (
     <picture>
-        <img
-            {...props}
-            style={props.height ? undefined : responsiveImgStyles}
-        />
+        <img {...props} style={responsiveImgStyles} />
     </picture>
 );
 
