@@ -4,14 +4,14 @@ import { configure, mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 configure({ adapter: new Adapter() });
 
-import { block as Block } from '../src';
-import { defaultConfig } from '../src/configs';
+import { block as Block, defaultConfig } from '../src';
 
 describe('The Block', () => {
     StyleSheetTestUtils.suppressStyleInjection();
 
     it('renders without errors', () => {
         mount(<Block />);
+        expect(true).toBeFalsy(); // should fail
     });
 
     describe('when there is no custom data', () => {
