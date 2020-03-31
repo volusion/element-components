@@ -9,7 +9,7 @@ const name = 'ElementComponents';
 
 function standardBuilds() {
     return {
-        external: ['react', 'react-dom'],
+        external: ['aphrodite', 'react', 'react-dom'],
         input: ['src/index.js'],
         output: [
             {
@@ -17,6 +17,7 @@ function standardBuilds() {
                 format: 'cjs',
                 name,
                 globals: {
+                    aphrodite: 'aphrodite',
                     react: 'React',
                     'react-dom': 'ReactDOM'
                 }
@@ -26,6 +27,7 @@ function standardBuilds() {
                 format: 'es',
                 name,
                 globals: {
+                    aphrodite: 'aphrodite',
                     react: 'React',
                     'react-dom': 'ReactDOM'
                 }
@@ -59,6 +61,7 @@ function devBuild() {
             file: 'dist/component.umd.js',
             format: 'umd',
             globals: {
+                aphrodite: 'aphrodite',
                 react: 'React',
                 'react-dom': 'ReactDOM'
             },
