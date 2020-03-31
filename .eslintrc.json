@@ -2,6 +2,7 @@
     "parser": "babel-eslint",
     "extends": [
         "eslint:recommended",
+        "plugin:security/recommended",
         "standard-react",
         "prettier",
         "prettier/react"
@@ -11,7 +12,7 @@
         "es6": true,
         "node": true
     },
-    "plugins": ["prettier", "react-hooks"],
+    "plugins": ["prettier", "security", "react-hooks"],
     "rules": {
         "no-const-assign": "error",
         "react/jsx-fragments": "off",
