@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@volusion/element-proptypes": "^1.1.2",
+    "aphrodite": "^2.4.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
@@ -60,6 +61,8 @@
     "build": "rollup -c",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
+    "test": "jest",
+    "test:watch": "jest --watch",
     "prepublish": "npm run lint && npm run build",
     "release": "npm run prepublish && np",
     "watch": "rollup -c --watch"
