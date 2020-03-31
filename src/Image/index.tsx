@@ -13,7 +13,7 @@ interface AmpImgProps extends ImgProps {
 }
 
 // TODO: Get rid of the anys
-interface ImageProps extends ImgProps {
+export interface ImageProps extends ImgProps {
     globalSettings: any;
     utils: any;
 }
