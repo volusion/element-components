@@ -2,7 +2,7 @@ import React from 'react';
 import ElementPropTypes from '@volusion/element-proptypes';
 
 const Text = ({ content }) => {
-    return <p dangerouslySetInnerHTML={{ __html: content }} />;
+    return <div dangerouslySetInnerHTML={{ __html: content }} />;
 };
 
 export const block = Text;
