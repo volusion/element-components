@@ -14,6 +14,11 @@
         "node": true
     },
     "plugins": ["jest", "prettier", "security"],
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
+    },
     "rules": {
         "no-const-assign": "error",
         "react/no-unused-prop-types": "off",
