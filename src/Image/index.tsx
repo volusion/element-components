@@ -1,5 +1,5 @@
 import React, { CSSProperties } from 'react';
-import { BlockUtils, GlobalSettings } from '../types';
+import { BlockUtils, GlobalSettings } from '../../types';
 
 interface ImgProps {
     alt: string;

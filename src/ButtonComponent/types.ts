@@ -1,4 +1,4 @@
-import { GlobalSettings } from '../types';
+import { GlobalSettings } from '../../types';
 
 export interface ButtonConfig {
     buttonStyle: string;
@@ -32,6 +32,11 @@ export interface BaseButtonStylesConfig {
     size: Size;
     rounded: BorderRadius;
     growOnHover: boolean;
+}
+
+export interface VolComponentButton {
+    primaryButtonStyles: BaseButtonStylesConfig;
+    secondaryButtonStyles: BaseButtonStylesConfig;
 }
 
 export type StyleProp = string | number | undefined;

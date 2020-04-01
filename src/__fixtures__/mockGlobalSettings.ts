@@ -1,4 +1,4 @@
-import { GlobalSettings } from '../types';
+import { GlobalSettings } from '../../types';
 
 export const mockGlobalSettings: GlobalSettings = {
     globalComponents: {
