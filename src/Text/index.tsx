@@ -1,7 +1,9 @@
 import React from 'react';
 import ElementPropTypes from '@volusion/element-proptypes';
 
-const Text = ({ content }) => {
+import { ElementComponent } from '../../types';
+
+const Text: ElementComponent<{ content: string }> = ({ content }) => {
     return <div dangerouslySetInnerHTML={{ __html: content }} />;
 };
 

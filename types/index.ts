@@ -1,11 +1,13 @@
-import { VolComponentButton } from '../src/ButtonComponent/types';
+import React from 'react';
 
-export interface GlobalSettings {
+export interface GlobalSettings<T, U> {
     globalComponents: {
-        volComponentButton: VolComponentButton;
+        [key: T]: U;
     };
 }
 
 export interface BlockUtils {
     isAmpRequest: boolean;
 }
+
+export type ElementComponent<Props> = React.Component<Props>;
