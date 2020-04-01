@@ -28,6 +28,7 @@ describe('Button component', () => {
     it('uses StandardButton when no "href" is passed', () => {
         const href = '';
         const rendered = mount(<ButtonComponent {...props} href={href} />);
+        expect(rendered).toMatchSnapshot();
         expect(rendered.find('a').exists()).toBe(false);
     });
 });
