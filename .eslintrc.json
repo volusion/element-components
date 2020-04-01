@@ -3,6 +3,7 @@
     "extends": [
         "eslint:recommended",
         "plugin:security/recommended",
+        "plugin:jest/recommended",
         "standard-react",
         "prettier",
         "prettier/react"
@@ -12,7 +13,12 @@
         "es6": true,
         "node": true
     },
-    "plugins": ["prettier", "security"],
+    "plugins": ["jest", "prettier", "security"],
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
+    },
     "rules": {
         "no-const-assign": "error",
         "react/no-unused-prop-types": "off",

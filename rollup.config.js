@@ -63,7 +63,9 @@ function devBuild() {
             globals: {
                 aphrodite: 'aphrodite',
                 react: 'React',
-                'react-dom': 'ReactDOM'
+                aphrodite: 'aphrodite',
+                '@volusion/element-components': 'Components',
+                '@volusion/element-proptypes': 'ElementSdk'
             },
             name,
             sourcemap: true

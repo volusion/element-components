@@ -1,0 +1,105 @@
+
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"
+    />
+    <script 
+      crossorigin 
+      async 
+      src="https://cdn.ampproject.org/v0.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/aphrodite@2.2.1/dist/aphrodite.umd.min.js"
+    ></script>
+    <script src="https://sdk.v2-prod.volusion.com/element-sdk.umd.js"></script>
+    <script src="../../dist/component.umd.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script>
+    var globalSettings = {
+      color: {
+        background: "#fff",
+        link: "rgba(51, 51, 51, 1)",
+        linkHover: "rgba(235, 16, 148, 1)",
+        primary: "#e53d2d",
+        salePrice: "rgba(235, 16, 148, 1)",
+        secondary: "#333",
+        text: "#000"
+      },
+      globalComponents: {
+        volComponentButton: {
+          primaryButtonStyles: {
+            size: "large",
+            rounded: "none",
+            textColor: "#fff",
+            fontWeight: "700",
+            borderColor: "rgba(247, 67, 186, 1)",
+            growOnHover: true,
+            letterSpacing: "none",
+            textTransform: "none",
+            hoverTextColor: "#fff",
+            backgroundColor: "rgba(247, 68, 186, 1)",
+            borderThickness: "none",
+            hoverBorderColor: "rgba(0, 0, 0, 1)",
+            hoverBackgroundColor: "rgba(218, 15, 148, 1)"
+          },
+          secondaryButtonStyles: {
+            size: "block",
+            rounded: "none",
+            textColor: "rgba(255, 255, 255, 1)",
+            fontWeight: "700",
+            borderColor: "rgba(247, 67, 186, 1)",
+            growOnHover: false,
+            letterSpacing: "none",
+            textTransform: "none",
+            hoverTextColor: "rgba(255, 255, 255, 1)",
+            backgroundColor: "rgba(247, 74, 201, 1)",
+            borderThickness: "thin",
+            hoverBorderColor: "rgba(0, 0, 0, 1)",
+            hoverBackgroundColor: "rgba(0, 0, 0, 1)"
+          }
+        }
+      },
+      typography: {
+        baseFontSize: "16px",
+        fontFamily: '"Lato", sans-serif',
+        headingFontFamily: '"Oswald", sans-serif',
+        headingWeight: "normal",
+        lineHeight: "1.15"
+      }
+    };
+
+    var ElementPropTypes = window.ElementSdk.ElementPropTypes;
+
+    var blockSettings = {
+      alt: 'Alt image text',
+      height: null,
+      src: 'https://res.cloudinary.com/dyx4yhvoq/image/upload/v1545428185/images/tcp-no-image.jpg',
+      title: 'Image title',
+      utils: {
+        isAmpRequest: false
+      },
+      width: null,
+    };
+
+    var image = React.createElement(
+      ElementComponents.Image.block,
+      { ...blockSettings, globalSettings }
+    );
+
+    ReactDOM.render(image, document.getElementById("root"));
+  </script>
+</html>

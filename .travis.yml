@@ -7,6 +7,9 @@ install:
 matrix:
   fast_finish: true
   include:
+    - name: "Tests"
+      script:
+        - npm run test
     - name: "Build"
       script:
         - npm run build
