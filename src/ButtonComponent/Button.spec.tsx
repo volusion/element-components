@@ -2,7 +2,7 @@ import React from 'react';
 import { mount, render } from 'enzyme';
 import { block as ButtonComponent, defaultConfig } from './index';
 import { ButtonProps } from './types';
-import { mockGlobalSettings as globalSettings } from './__fixtures__/mockGlobalSettings';
+import { mockGlobalSettings as globalSettings } from '../__fixtures__/mockGlobalSettings';
 
 describe('Button component', () => {
     let props: ButtonProps;
