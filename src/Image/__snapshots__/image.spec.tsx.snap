@@ -25,3 +25,14 @@ exports[`Image component should change src, alt text, and title when given props
   />
 </picture>
 `;
+
+exports[`Image component should have an amp-img tag when an AMP request 1`] = `
+<amp-img
+  alt=""
+  height="270"
+  layout="responsive"
+  src="https://res.cloudinary.com/dyx4yhvoq/image/upload/v1545428185/images/tcp-no-image.jpg"
+  title=""
+  width="360"
+/>
+`;

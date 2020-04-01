@@ -31,6 +31,7 @@ describe('Image component', () => {
     const image = mount(<Image {...props} />);
     expect(image.find('img').exists()).toBeFalsy();
     expect(image.find('amp-img').exists()).toBeTruthy();
+    expect(image.render()).toMatchSnapshot();
   });
 
   it('should change src, alt text, and title when given props', () => {
