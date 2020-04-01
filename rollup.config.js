@@ -60,7 +60,9 @@ function devBuild() {
             format: 'umd',
             globals: {
                 react: 'React',
-                'react-dom': 'ReactDOM'
+                aphrodite: 'aphrodite',
+                '@volusion/element-components': 'Components',
+                '@volusion/element-proptypes': 'ElementSdk'
             },
             name,
             sourcemap: true
