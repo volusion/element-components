@@ -1,6 +1,5 @@
 import React from 'react';
 import { ElementPropTypes } from '@volusion/element-proptypes';
-
 import { ComponentProps } from '../../types';
 
 interface TextProps extends ComponentProps {
