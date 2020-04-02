@@ -4,7 +4,7 @@ import { block as Text, defaultConfig } from './index';
 import { mockGlobalSettings as globalSettings } from '../__fixtures__/mockGlobalSettings';
 
 describe('The <Text /> Component', () => {
-    const renderWithContent = (content: string) => render(<Text content={content} globalSettings={globalSettings} />)
+    const renderWithContent = (content: string) => render(<Text htmlString={content} globalSettings={globalSettings} />)
 
     describe('with default props', () => {
         it('matches the snapshot', () => {
