@@ -10,4 +10,6 @@ export interface BlockUtils {
     isAmpRequest: boolean;
 }
 
-export type ElementComponent<Props> = React.Component<Props>;
+export interface ComponentProps {
+    globalSettings: GlobalSettings;
+};

@@ -1,9 +1,13 @@
 import React from 'react';
 import ElementPropTypes from '@volusion/element-proptypes';
 
-import { ElementComponent } from '../../types';
+import { ComponentProps } from '../../types';
 
-const Text: ElementComponent<{ content: string }> = ({ content }) => {
+interface TextProps extends ComponentProps {
+   content: string;
+}
+
+const Text: React.FC<TextProps> = ({ content }) => {
     return <div dangerouslySetInnerHTML={{ __html: content }} />;
 };
 
