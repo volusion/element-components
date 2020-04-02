@@ -6,9 +6,11 @@ interface TextProps extends ComponentProps {
     content: string;
 }
 
-const Text: React.FC<TextProps> = ({ content }) => {
+const Text: React.FC<TextProps> = ({ content, ...props }) => {
     if (!content) return null;
-    return <div dangerouslySetInnerHTML={{ __html: content }} />;
+    // We delete the unused globalSettings prop so that React won't complain about it not being a valid DOM attribute.
+    delete props.globalSettings;
+    return <div {...props} dangerouslySetInnerHTML={{ __html: content }} />;
 };
 
 export const block = Text;
