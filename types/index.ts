@@ -1,8 +1,8 @@
-import React from 'react';
+import { VolComponentButton } from '../src/ButtonComponent/types';
 
-export interface GlobalSettings<T, U> {
+export interface GlobalSettings {
     globalComponents: {
-        [key: T]: U;
+        volComponentButton: VolComponentButton;
     };
 }
 

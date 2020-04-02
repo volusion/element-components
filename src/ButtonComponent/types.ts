@@ -8,7 +8,7 @@ export interface ButtonConfig {
 }
 
 export interface ButtonProps extends ButtonConfig {
-    globalSettings: GlobalSettings<'volComponentButton', VolComponentButton>;
+    globalSettings: GlobalSettings;
 }
 
 type FontWeight = '300' | '400' | '500' | '600' | '700' | '800' | '900';

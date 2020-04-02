@@ -21,7 +21,6 @@
     },
     "rules": {
         "no-const-assign": "error",
-        "react/prop-types": 0,
         "react/no-unused-prop-types": "off",
         "no-var": "error",
         "semi": "error",
