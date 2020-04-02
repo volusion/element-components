@@ -12,4 +12,4 @@ export interface BlockUtils {
 
 export interface ComponentProps {
     globalSettings: GlobalSettings;
-};
+}

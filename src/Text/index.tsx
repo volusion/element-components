@@ -7,7 +7,7 @@ interface TextProps extends ComponentProps {
 }
 
 const Text: React.FC<TextProps> = ({ content }) => {
-    if(!content) return null;
+    if (!content) return null;
     return <div dangerouslySetInnerHTML={{ __html: content }} />;
 };
 
