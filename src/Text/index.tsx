@@ -4,7 +4,7 @@ import { ElementPropTypes } from '@volusion/element-proptypes';
 import { ComponentProps } from '../../types';
 
 interface TextProps extends ComponentProps {
-   content: string;
+    content: string;
 }
 
 const Text: React.FC<TextProps> = ({ content }) => {
