@@ -28,4 +28,4 @@ exports[`The <Text /> Component with default props matches the snapshot 1`] = `
 </div>
 `;
 
-exports[`The <Text /> Component with empty content matches the snapshot 1`] = `<div />`;
+exports[`The <Text /> Component with empty content matches the snapshot 1`] = `null`;
