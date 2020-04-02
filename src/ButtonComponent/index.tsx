@@ -11,7 +11,6 @@ const Button = (props: ButtonProps) => {
     const { primaryButtonStyles, secondaryButtonStyles } = volComponentButton;
 
     const BaseButton: React.FC<BaseButtonProps> = (props) => {
-        /* eslint react/prop-types: 0 */
         const classes = getClasses(props.globalButtonSettings);
         return props.href ? (
             <LinkButton {...props} className={css(classes.button)} />
