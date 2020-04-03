@@ -8,7 +8,7 @@ describe('The <Text /> Component', () => {
 
     describe('with default props', () => {
         it('matches the snapshot', () => {
-            const rendered = mount(<Text {...defaultConfig} globalSettings={globalSettings} />).render();
+            const rendered = renderWithContent(defaultConfig.htmlString);
             expect(rendered).toMatchSnapshot();
         });
     });
