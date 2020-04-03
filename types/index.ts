@@ -9,3 +9,7 @@ export interface GlobalSettings {
 export interface BlockUtils {
     isAmpRequest: boolean;
 }
+
+export interface ComponentProps {
+    globalSettings: GlobalSettings;
+}
