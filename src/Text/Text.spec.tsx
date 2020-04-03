@@ -1,14 +1,14 @@
 import React from 'react';
-import { mount, render } from 'enzyme';
+import { mount } from 'enzyme';
 import { block as Text, defaultConfig } from './index';
 import { mockGlobalSettings as globalSettings } from '../__fixtures__/mockGlobalSettings';
 
 describe('The <Text /> Component', () => {
-    const renderWithContent = (content: string) => render(<Text htmlString={content} globalSettings={globalSettings} />)
+    const renderWithContent = (content: string) => mount(<Text htmlString={content} globalSettings={globalSettings} />).render()
 
     describe('with default props', () => {
         it('matches the snapshot', () => {
-            const rendered = render(<Text {...defaultConfig} globalSettings={globalSettings} />);
+            const rendered = mount(<Text {...defaultConfig} globalSettings={globalSettings} />).render();
             expect(rendered).toMatchSnapshot();
         });
     });
