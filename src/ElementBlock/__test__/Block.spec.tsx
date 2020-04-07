@@ -27,8 +27,16 @@ describe('The ElementBlock', () => {
     });
     describe('when the custom attribute does not have a valid name', () => {
         it('should not apply the attribute to the element', () => {
-            const wrapper = mount(<Block {...props} customAttrs={[{ name: '', value: 'TEST_VALUE' }]} />);
+            const customAttrs = [{ name: '', value: 'TEST_VALUE' }];
+            const wrapper = mount(<Block {...props} customAttrs={customAttrs} />);
             expect(Object.keys(wrapper.find('div').props())).toHaveLength(2); // ["className", "children"]
+        });
+    });
+    describe('when the custom attribute has a valid name', () => {
+        it('should apply the attribute to the element', () => {
+            const customAttrs = [{ name: 'TEST_NAME', value: 'TEST_VALUE' }];
+            const wrapper = mount(<Block {...props} customAttrs={customAttrs} />);
+            expect(wrapper.exists(`[data-element-test_name="TEST_VALUE"]`)).toBeTruthy();
         });
     });
 });
