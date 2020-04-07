@@ -12,7 +12,7 @@ let props: ElementBlockProps = {
     children: 'TEST_CHILD',
     globalSettings: {}
 };
-describe('The ElementBlock', () => {
+describe('The ElementBlock component', () => {
     StyleSheetTestUtils.suppressStyleInjection();
 
     it('should match the snapshot', () => {
