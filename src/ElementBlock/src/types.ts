@@ -11,7 +11,7 @@ export interface ElementBlockStylesProps {
 type paddingSizes = 'None' | 'Small' | 'Medium' | 'Large';
 
 export interface ElementBlockConfigs extends ElementBlockStylesProps {
-    customAttrs: [customAttrsProps];
+    customAttrs: customAttrsProps[];
 }
 
 export interface ElementBlockProps extends ElementBlockConfigs {
