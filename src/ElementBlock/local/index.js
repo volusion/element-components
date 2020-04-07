@@ -5,7 +5,7 @@ const createQueryParams = () => {
     const searchParams = window.location.search;
     if (searchParams) {
         const urlParams = searchParams.replace('?', '').split('&');
-        urlParams.forEach(param => {
+        urlParams.forEach((param) => {
             const [key, value] = param.split('=');
             params[key] = decodeURI(value);
         });
@@ -20,7 +20,7 @@ const props = {
         { name: 'hello', value: 'world' },
         { name: 'foo', value: 'bar' }
     ],
-    children: React.createElement('h1', {}, 'Mock Child'),
+    children: window.React.createElement('h1', {}, 'Mock Child'),
     globalSettings: {
         __________: '1rem'
     }
@@ -32,33 +32,33 @@ window.ElementSdk.client.configure({
     tenant: tenantId
 });
 
-const globalStyles = {
-    color: {
-        background: '#fff',
-        link: '#333',
-        linkHover: '#333',
-        primary: '#333',
-        salePrice: '#333',
-        secondary: '#333',
-        text: '#333'
-    },
-    globalComponents: {},
-    typography: {
-        baseFontSize: '16px',
-        fontFamily: `"Roboto", sans-serif`,
-        headingFontFamily: `"Roboto", sans-serif`,
-        headingWeight: 700,
-        lineHeight: '1.15'
-    }
-};
+// const globalStyles = {
+//     color: {
+//         background: '#fff',
+//         link: '#333',
+//         linkHover: '#333',
+//         primary: '#333',
+//         salePrice: '#333',
+//         secondary: '#333',
+//         text: '#333'
+//     },
+//     globalComponents: {},
+//     typography: {
+//         baseFontSize: '16px',
+//         fontFamily: `"Roboto", sans-serif`,
+//         headingFontFamily: `"Roboto", sans-serif`,
+//         headingWeight: 700,
+//         lineHeight: '1.15'
+//     }
+// };
 const canonicalUrl = (queryParams = {}) => {
     const joinedQueries = Object.keys(queryParams)
-        .map(queryName => `${queryName}=${queryParams[queryName]}`)
+        .map((queryName) => `${queryName}=${queryParams[queryName]}`)
         .join('&');
     const queryString = joinedQueries ? '?' + joinedQueries : '';
     return window.location.origin + queryString;
 };
-const addLink = href => {
+const addLink = (href) => {
     const link = document.createElement('link');
     link.setAttribute('type', 'text/css');
     link.setAttribute('rel', 'stylesheet');
@@ -70,7 +70,7 @@ const isAmpRequest = /googleamp/i.test(window.location.pathname)
     ? true
     : undefined;
 
-const addAmpScript = customElement => {
+const addAmpScript = (customElement) => {
     if (isAmpRequest) {
         const script = document.createElement('script');
         script.setAttribute('async', '');
@@ -81,16 +81,19 @@ const addAmpScript = customElement => {
         );
         document.head.appendChild(script);
     } else {
+        // eslint-disable-next-line
         console.error(
             `"addAmpScript" is only available on AMP pages. Please check if "isAmpRequest" is true before using this function.`
         );
     }
 };
 
-const throwNotFound = () =>
+const throwNotFound = () => {
+    // eslint-disable-next-line
     console.error(
         `"throwNotFound()" was called. On a live site, this would load a 404 page.`
     );
+};
 
 /* eslint-disable no-unused-vars */
 const {
@@ -121,7 +124,7 @@ const clientUtils = {
 
 function configureBlock(data = {}) {
     const block = blockModule.block;
-    return React.createElement(block, {
+    return window.React.createElement(block, {
         ...props,
         utils: { ...clientUtils, ...serverUtils },
         joinClasses,
@@ -132,7 +135,7 @@ function configureBlock(data = {}) {
 function renderBlock(data = {}) {
     const block = configureBlock(data);
     const root = document.getElementById('root');
-    ReactDOM.render(block, root);
+    window.ReactDOM.render(block, root);
 }
 
 window.onload = () => renderBlock();
