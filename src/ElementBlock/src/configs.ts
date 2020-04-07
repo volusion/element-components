@@ -48,10 +48,10 @@ export const configSchema = {
 };
 
 export const defaultConfig: ElementBlockConfigs = {
-    isFullWidth: false,
-    hasHorizontalPadding: true,
-    topPadding: 'Small',
-    bottomPadding: 'Small',
+    isFullWidth: true,
+    hasHorizontalPadding: false,
+    topPadding: 'None',
+    bottomPadding: 'None',
     showOnDesktop: true,
     showOnTablet: true,
     showOnMobile: true,
