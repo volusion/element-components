@@ -61,7 +61,6 @@ function devBuild() {
             file: 'dist/component.umd.js',
             format: 'umd',
             globals: {
-                aphrodite: 'aphrodite',
                 react: 'React',
                 aphrodite: 'aphrodite',
                 '@volusion/element-components': 'Components',
@@ -73,7 +72,7 @@ function devBuild() {
         external: ['aphrodite', 'react', 'react-dom'],
         plugins: [
             eslint({
-                throwOnError: true
+                throwOnError: false
             }),
             typescript(),
             babel({
