@@ -3,30 +3,32 @@ import { StyleSheetTestUtils } from 'aphrodite';
 import { configure, mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 configure({ adapter: new Adapter() });
-
 import { block as Block } from '../src/';
 import { defaultConfig } from '../src/configs';
+import { ElementBlockProps } from '../src/types';
 
-describe('The Block', () => {
+let props: ElementBlockProps = {
+    ...defaultConfig,
+    children: 'TEST_CHILD',
+    globalSettings: {}
+};
+describe('The ElementBlock', () => {
     StyleSheetTestUtils.suppressStyleInjection();
 
-    it('renders without errors', () => {
-        mount(<Block />);
+    it('should match the snapshot', () => {
+        const wrapper = mount(<Block {...props} />);
+        expect(wrapper.render()).toMatchSnapshot();
     });
-
-    describe('when there is no custom data', () => {
-        it('should render the block with the default content', () => {
-            const wrapper = mount(<Block />);
-            expect(wrapper.text()).toBe(defaultConfig.text);
+    describe('when there are no children', () => {
+        it('should return null', () => {
+            const wrapper = mount(<Block {...props} children={undefined} />);
+            expect(wrapper.isEmptyRender()).toBeTruthy();
         });
     });
-
-    describe('when given custom data', () => {
-        it('should render the block using the custom data', () => {
-            const customText = 'Custom Block Text';
-            const blockConfig = { text: customText };
-            const wrapper = mount(<Block {...blockConfig} />);
-            expect(wrapper.text()).toBe(customText);
+    describe('when the custom attribute does not have a valid name', () => {
+        it('should not apply the attribute to the element', () => {
+            const wrapper = mount(<Block {...props} customAttrs={[{ name: '', value: 'TEST_VALUE' }]} />);
+            expect(Object.keys(wrapper.find('div').props())).toHaveLength(2); // ["className", "children"]
         });
     });
 });
