@@ -10,11 +10,11 @@ const Block = (props: ElementBlockProps) => {
     const customProps: ObjectLiteral = {};
     customAttrs.forEach((attr: { name: string; value: string }) => {
         const hyphenateString = (string = '') => {
-            // const specialChars = /[^a-zA-Z0-9\s-_]+/g;
+            // const specialChars = /[^a-zA-Z0-9\s-_]+/g; // Talk to Phil about adding/removing
             const nonAlphaNumericChars = /[^a-zA-Z0-9]+/g;
             const attr = string
                 .trim()
-                // .replace(specialChars, '')
+                // .replace(specialChars, '') // Talk to Phil about adding/removing
                 .replace(nonAlphaNumericChars, '-');
             return attr;
         };
