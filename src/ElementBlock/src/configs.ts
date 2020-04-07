@@ -36,6 +36,7 @@ export const configSchema = {
             ElementPropTypes.shape({
                 name: {
                     label: `Name`,
+                    tooltip: `All entered values are automatically prefixed with "data-element-". Example: "data-element-your-custom-attribute-name"`,
                     type: ElementPropTypes.string
                 },
                 value: {

@@ -36,7 +36,7 @@ describe('The ElementBlock', () => {
         it('should apply the attribute to the element', () => {
             const customAttrs = [{ name: 'TEST_NAME', value: 'TEST_VALUE' }];
             const wrapper = mount(<Block {...props} customAttrs={customAttrs} />);
-            expect(wrapper.exists(`[data-element-test_name="TEST_VALUE"]`)).toBeTruthy();
+            expect(wrapper.exists(`[data-element-test-name="TEST_VALUE"]`)).toBeTruthy();
         });
     });
 });
