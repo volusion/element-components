@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The <Text /> Component with custom content matches the snapshot 1`] = `
+<div>
+  <h1>
+    Test Content
+  </h1>
+</div>
+`;
+
+exports[`The <Text /> Component with custom content matches the snapshot 2`] = `
+<div>
+  Test Content
+</div>
+`;
+
+exports[`The <Text /> Component with custom content matches the snapshot 3`] = `
+<div>
+  <p>
+    Test Content
+  </p>
+</div>
+`;
+
+exports[`The <Text /> Component with default props matches the snapshot 1`] = `
+<div>
+  Lorem Ipsum
+</div>
+`;
+
+exports[`The <Text /> Component with empty content matches the snapshot 1`] = `null`;
