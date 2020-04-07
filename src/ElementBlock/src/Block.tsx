@@ -9,7 +9,7 @@ const Block = (props: ElementBlockProps) => {
     if (!children) return null;
     const styles = StyleSheet.create(getStyles(props, globalSettings));
     const customProps: ObjectLiteral = {};
-    customAttrs.forEach((attr: { name: string; value: string }) => {
+    customAttrs.filter(attr => attr.name).forEach((attr: { name: string; value: string }) => {
         const hyphenateString = (string = '') => {
             // const specialChars = /[^a-zA-Z0-9\s-_]+/g; // Talk to Phil about adding/removing
             const nonAlphaNumericChars = /[^a-zA-Z0-9]+/g;
