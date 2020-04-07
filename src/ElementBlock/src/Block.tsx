@@ -6,6 +6,7 @@ import { ElementBlockProps, ObjectLiteral } from './types';
 
 const Block = (props: ElementBlockProps) => {
     const { globalSettings, customAttrs, children } = props;
+    if (!children) return null;
     const styles = StyleSheet.create(getStyles(props, globalSettings));
     const customProps: ObjectLiteral = {};
     customAttrs.forEach((attr: { name: string; value: string }) => {
