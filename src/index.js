@@ -6,4 +6,12 @@ import * as LinkButton from './LinkButton';
 import * as ElementBlock from './ElementBlock/src';
 import * as Text from './Text';
 
-export { Button, Image, Input, LinkButton, ButtonComponent, Text, ElementBlock };
+export {
+    Button,
+    Image,
+    Input,
+    LinkButton,
+    ButtonComponent,
+    Text,
+    ElementBlock
+};
