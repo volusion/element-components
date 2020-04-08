@@ -1,8 +1,14 @@
-import * as ButtonComponent from './ButtonComponent';
-import * as Button from './Button';
+import * as Button from './ButtonComponent';
+import * as LegacyButton from './Button';
 import * as Image from './Image';
-import * as Input from './Input';
-import * as LinkButton from './LinkButton';
 import * as Text from './Text';
 
-export { Button, Image, Input, LinkButton, ButtonComponent, Text };
+export const LegacyComponents = {
+    Button: LegacyButton
+};
+
+export const StandardComponents = {
+    Button,
+    Image,
+    Text
+};
