@@ -72,7 +72,7 @@ function devBuild() {
         external: ['aphrodite', 'react', 'react-dom'],
         plugins: [
             eslint({
-                throwOnError: false
+                throwOnError: true
             }),
             typescript(),
             babel({
