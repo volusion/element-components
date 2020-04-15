@@ -2,7 +2,6 @@ import babel from 'rollup-plugin-babel';
 import commonjs from 'rollup-plugin-commonjs';
 import resolve from 'rollup-plugin-node-resolve';
 import replace from 'rollup-plugin-replace';
-import eslint from 'rollup-plugin-eslint';
 import typescript from '@rollup/plugin-typescript';
 
 const name = 'ElementComponents';
@@ -71,9 +70,6 @@ function devBuild() {
         },
         external: ['aphrodite', 'react', 'react-dom'],
         plugins: [
-            eslint({
-                throwOnError: true
-            }),
             typescript(),
             babel({
                 plugins: ['external-helpers'],
