@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The ElementBlock component should match the snapshot 1`] = `
+<div
+  class="wrapper_zdxht7"
+>
+  TEST_CHILD
+</div>
+`;
