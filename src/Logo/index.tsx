@@ -1,30 +1,19 @@
 import React from 'react';
-// import { BlockUtils, GlobalSettings } from '../../types';
 
 type LogoStyle = 'text' | 'image';
 
 interface LogoProps {
     style: LogoStyle;
-    image?: string;
-    storeName?: string;
+    Image?: any;
+    StoreName?: any;
 }
 
-const LogoText = ({ text }: { text: string }) => (
-    <div>{text}</div>
-);
-
-const LogoImage = ({ url }: { url: string }) => (
-    <div>
-        <img src={url} />
-    </div>
-);
-
-const Logo = ({style, image, storeName}: LogoProps) => {
+const Logo = ({style, Image, StoreName}: LogoProps) => {
     if (style === 'image') {
-        return <LogoImage url={image || ''} />;
+        return <Image />;
     }
 
-    return <LogoText text={storeName || ''} />;
+    return <StoreName />;
 };
 
 export const block = Logo;

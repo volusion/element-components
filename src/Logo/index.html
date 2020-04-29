@@ -63,16 +63,39 @@
 
     var ElementPropTypes = window.ElementSdk.ElementPropTypes;
 
-    var blockSettings = {
-      style: 'text',
-      storeName: 'Your Store Name',
+    const { block: Image, defaultProps: imgDefaultProps } = window.ElementComponents.StandardComponents.Image;
+    const imgProps = {
+      ...imgDefaultProps,
+      utils: { isAmpRequest: false },
+      src: 'https://res.cloudinary.com/dyx4yhvoq/image/upload/v1545428185/images/tcp-no-image.jpg',
     };
 
-    var logo = React.createElement(
+    const imageLogoSettings = {
+      style: 'image',
+      Image: () => React.createElement(Image, imgProps)
+    };
+
+    const { block: Text, defaultProps: textDefaultProps } = window.ElementComponents.StandardComponents.Text;
+    const textProps = {
+      ...textDefaultProps,
+      htmlString: 'Your Store Name'
+    }
+
+    const textLogosettings = {
+      style: 'text',
+      StoreName: () => React.createElement(Text, textProps)
+    }
+
+    var imageLogo = React.createElement(
       ElementComponents.StandardComponents.Logo.block,
-      { ...blockSettings, globalSettings }
+      { ...imageLogoSettings, globalSettings }
     );
 
-    ReactDOM.render(logo, document.getElementById("root"));
+    var textLogo = React.createElement(
+      ElementComponents.StandardComponents.Logo.block,
+      { ...textLogosettings, globalSettings }
+    );
+
+    ReactDOM.render([textLogo, imageLogo], document.getElementById("root"));
   </script>
 </html>
