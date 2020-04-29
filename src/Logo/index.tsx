@@ -1,8 +1,8 @@
 import React from 'react';
 
-type LogoStyle = 'text' | 'image';
+export type LogoStyle = 'text' | 'image';
 
-interface LogoProps {
+export interface LogoProps {
     style: LogoStyle;
     Image?: any;
     StoreName?: any;
