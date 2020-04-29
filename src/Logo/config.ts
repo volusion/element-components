@@ -2,13 +2,13 @@ import { ElementPropTypes } from '@volusion/element-proptypes';
 import { LogoStyle } from './index';
 
 export const defaultConfig = {
-  style: 'text' as LogoStyle,
+  style: 'Text' as LogoStyle,
 };
 
 export const configSchema = {
   style: {
     label: 'Style',
-    type: ElementPropTypes.oneOf(['text', 'image']),
+    type: ElementPropTypes.oneOf(['Text', 'Image']),
   },
   Image: {
     label: 'Image',

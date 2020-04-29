@@ -1,6 +1,6 @@
 import React from 'react';
 
-export type LogoStyle = 'text' | 'image';
+export type LogoStyle = 'Text' | 'Image';
 
 export interface LogoProps {
     style: LogoStyle;
@@ -9,7 +9,7 @@ export interface LogoProps {
 }
 
 const Logo = ({style, Image, StoreName}: LogoProps) => {
-    if (style === 'image') {
+    if (style === 'Image') {
         return <Image />;
     }
 
