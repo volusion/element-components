@@ -23,7 +23,7 @@ const Button = (props: ButtonProps) => {
         <BaseButton
             {...props}
             globalButtonSettings={
-                props.buttonStyle === 'primary'
+                props.buttonStyle === 'Primary'
                     ? primaryButtonStyles
                     : secondaryButtonStyles
             }
@@ -34,7 +34,7 @@ const Button = (props: ButtonProps) => {
 export const block = Button;
 
 export const defaultConfig: ButtonConfig = {
-    buttonStyle: 'primary',
+    buttonStyle: 'Primary',
     href: '',
     text: 'My Button',
     newWindow: false
@@ -43,7 +43,7 @@ export const defaultConfig: ButtonConfig = {
 export const configSchema = {
     buttonStyle: {
         label: 'Button Style',
-        type: ElementPropTypes.oneOf('primary', 'secondary')
+        type: ElementPropTypes.oneOf(['Primary', 'Secondary'])
     },
     href: {
         label: 'Button Link',
