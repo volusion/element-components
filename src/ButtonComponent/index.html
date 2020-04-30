@@ -79,24 +79,24 @@
     var ElementPropTypes = window.ElementSdk.ElementPropTypes;
 
     var primaryBlockSettings = {
-      buttonStyle: "primary", // 'primary' or 'secondary'
+      buttonStyle: "Primary", // 'Primary' or 'Secondary'
       href: "#",
       text: "Primary Button",
       newWindow: true
     };
 
     var secondaryBlockSettings = {
-      buttonStyle: "secondary", // 'primary' or 'secondary'
+      buttonStyle: "Secondary", // 'Primary' or 'Secondary'
       text: "Secondary Button"
     };
-
+    console.log(ElementComponents);
     var buttonPrimary = React.createElement(
-      ElementComponents.ButtonComponent.block,
+      ElementComponents.StandardComponents.Button.block,
       { ...primaryBlockSettings, globalSettings }
     );
 
     var secondaryButton = React.createElement(
-      ElementComponents.ButtonComponent.block,
+      ElementComponents.StandardComponents.Button.block,
       { ...secondaryBlockSettings, globalSettings }
     );
 
