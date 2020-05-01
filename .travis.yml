@@ -7,12 +7,15 @@ install:
 matrix:
   fast_finish: true
   include:
-    - name: "Tests"
+    - name: 'npm audit'
       script:
-        - npm run test
+          - npm run audit:ci:high
     - name: "Build"
       script:
         - npm run build
+    - name: "Tests"
+      script:
+        - npm test
     - name: "Lint"
       script:
         - npm run lint
