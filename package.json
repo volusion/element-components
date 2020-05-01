@@ -60,6 +60,7 @@
   },
   "scripts": {
     "build": "rollup -c",
+    "compile": "tsc --pretty",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "test": "jest --passWithNoTests",
