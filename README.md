@@ -4,14 +4,14 @@ The components in this repository are injected by default into all Element block
 configure their components globally across all theme pages.
 
 ### Button
-Button component allows for both a `primary` and `secondary` button, in either a `button` or `link` tag. Both config specs are the same. 
+Button component allows for both a `Primary` and `Secondary` button, in either a `button` or `link` tag. Both config specs are the same. 
 
 ### Button config spec
 
 | Prop Name     | Options | Default Value | Site Designer Enabled |  Description |
 | ------------- | ------- | ------------- | ------------------------ |  ----------- |
 | `className`  | string | `''` | `false` | allows for passing classes to component to extend current classes |
-| `buttonStyle`  | `'primary'` or `'secondary'` | `'primary'` | `false` |  Use `primaryButtonStyles` or `secondaryButtonStyles` |
+| `buttonStyle`  | `'Primary'` or `'Secondary'` | `'primary'` | `false` |  Use `primaryButtonStyles` or `secondaryButtonStyles` |
 | `href`  | string | `''` | `false` | passing `href` as a prop will cause the component to render as an anchor tag |
 | `textColor`  | string | `'#333'` | `true` | button text color |
 | `hoverTextColor`  | string | `'#333'` | `true` | button text hover color |

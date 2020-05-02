@@ -7,39 +7,33 @@ export const getStyles = (
     const mobileStyles =
         blockConfig.showOnMobile === false
             ? {
-                '@media only screen and (max-width: 30em)': {
-                    display: 'none'
-                }
-            }
+                  '@media only screen and (max-width: 30em)': {
+                      display: 'none'
+                  }
+              }
             : {};
     const tabletStyles =
         blockConfig.showOnTablet === false
             ? {
-                '@media only screen and (min-width: 30em) and (max-width: 60em)': {
-                    display: 'none'
-                }
-            }
+                  '@media only screen and (min-width: 30em) and (max-width: 60em)': {
+                      display: 'none'
+                  }
+              }
             : {};
     const desktopStyles =
         blockConfig.showOnDesktop === false
             ? {
-                '@media only screen and (min-width: 60em)': {
-                    display: 'none'
-                }
-            }
+                  '@media only screen and (min-width: 60em)': {
+                      display: 'none'
+                  }
+              }
             : {};
     return {
         wrapper: {
             width: '100%',
-            maxWidth: blockConfig.isFullWidth
-                ? undefined
-                : '96rem',
-            paddingRight: blockConfig.hasHorizontalPadding
-                ? '1rem'
-                : undefined,
-            paddingLeft: blockConfig.hasHorizontalPadding
-                ? '1rem'
-                : undefined,
+            maxWidth: blockConfig.isFullWidth ? undefined : '96rem',
+            paddingRight: blockConfig.hasHorizontalPadding ? '1rem' : undefined,
+            paddingLeft: blockConfig.hasHorizontalPadding ? '1rem' : undefined,
             paddingTop: getPaddingAmount(
                 blockConfig.topPadding,
                 globalSettings

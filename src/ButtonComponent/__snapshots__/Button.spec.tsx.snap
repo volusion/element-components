@@ -10,7 +10,7 @@ exports[`Button component matches snapshot 1`] = `
 
 exports[`Button component uses StandardButton when no "href" is passed 1`] = `
 <Button
-  buttonStyle="primary"
+  buttonStyle="Primary"
   globalSettings={
     Object {
       "globalComponents": Object {
@@ -54,7 +54,7 @@ exports[`Button component uses StandardButton when no "href" is passed 1`] = `
   text="My Button"
 >
   <BaseButton
-    buttonStyle="primary"
+    buttonStyle="Primary"
     globalButtonSettings={
       Object {
         "backgroundColor": "rgba(247, 68, 186, 1)",
@@ -115,7 +115,7 @@ exports[`Button component uses StandardButton when no "href" is passed 1`] = `
     text="My Button"
   >
     <Component
-      buttonStyle="primary"
+      buttonStyle="Primary"
       className="button_1hmnzek"
       globalButtonSettings={
         Object {
