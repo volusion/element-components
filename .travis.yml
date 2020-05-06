@@ -9,7 +9,7 @@ matrix:
   include:
     - name: 'npm audit'
       script:
-          - npm run audit:ci:high
+          - npm run audit:ci
     - name: "Build"
       script:
         - npm run build
