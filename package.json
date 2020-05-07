@@ -29,6 +29,7 @@
     "@types/react": "^16.9.25",
     "@types/react-dom": "^16.9.5",
     "aphrodite": "^2.4.0",
+    "audit-ci": "^2.5.1",
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.6",
     "babel-plugin-external-helpers": "^6.22.0",
@@ -47,6 +48,7 @@
     "eslint-plugin-react": "^7.17.0",
     "eslint-plugin-security": "^1.4.0",
     "jest": "^25.2.4",
+    "live-server": "^1.2.1",
     "np": "^3.1.0",
     "prettier": "^2.0.1",
     "rollup": "^0.59.4",
@@ -60,12 +62,15 @@
   },
   "scripts": {
     "build": "rollup -c",
+    "compile": "tsc --pretty",
+    "start": "live-server --port=5309 --open=src",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "test": "jest --passWithNoTests",
     "test:watch": "jest --watch",
     "prepublish": "npm run lint && npm run build",
     "release": "npm run prepublish && np",
-    "watch": "rollup -c --watch"
+    "watch": "rollup -c --watch",
+    "audit:ci": "audit-ci --high"
   }
 }
