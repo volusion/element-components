@@ -1,15 +1,9 @@
-
 <html>
   <head>
     <link
       rel="stylesheet"
       href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"
     />
-    <script 
-      crossorigin 
-      async 
-      src="https://cdn.ampproject.org/v0.js"
-    ></script>
     <script
       crossorigin
       src="https://unpkg.com/react@16/umd/react.development.js"
@@ -56,21 +50,6 @@
             hoverBorderColor: "rgba(0, 0, 0, 1)",
             hoverBackgroundColor: "rgba(218, 15, 148, 1)"
           },
-          secondaryButtonStyles: {
-            size: "block",
-            rounded: "none",
-            textColor: "rgba(255, 255, 255, 1)",
-            fontWeight: "700",
-            borderColor: "rgba(247, 67, 186, 1)",
-            growOnHover: false,
-            letterSpacing: "none",
-            textTransform: "none",
-            hoverTextColor: "rgba(255, 255, 255, 1)",
-            backgroundColor: "rgba(247, 74, 201, 1)",
-            borderThickness: "thin",
-            hoverBorderColor: "rgba(0, 0, 0, 1)",
-            hoverBackgroundColor: "rgba(0, 0, 0, 1)"
-          }
         }
       },
       typography: {
@@ -84,22 +63,39 @@
 
     var ElementPropTypes = window.ElementSdk.ElementPropTypes;
 
-    var blockSettings = {
-      alt: 'Alt image text',
-      height: null,
+    const { block: Image, defaultProps: imgDefaultProps } = window.ElementComponents.StandardComponents.Image;
+    const imgProps = {
+      ...imgDefaultProps,
+      utils: { isAmpRequest: false },
       src: 'https://res.cloudinary.com/dyx4yhvoq/image/upload/v1545428185/images/tcp-no-image.jpg',
-      title: 'Image title',
-      utils: {
-        isAmpRequest: false
-      },
-      width: null,
     };
 
-    var image = React.createElement(
-      ElementComponents.StandardComponents.Image.block,
-      { ...blockSettings, globalSettings }
+    const imageLogoSettings = {
+      style: 'Image',
+      Image: () => React.createElement(Image, imgProps)
+    };
+
+    const { block: Text, defaultProps: textDefaultProps } = window.ElementComponents.StandardComponents.Text;
+    const textProps = {
+      ...textDefaultProps,
+      htmlString: 'Your Store Name'
+    }
+
+    const textLogosettings = {
+      style: 'Text',
+      StoreName: () => React.createElement(Text, textProps)
+    }
+
+    var imageLogo = React.createElement(
+      ElementComponents.StandardComponents.Logo.block,
+      { ...imageLogoSettings, globalSettings }
     );
 
-    ReactDOM.render(image, document.getElementById("root"));
+    var textLogo = React.createElement(
+      ElementComponents.StandardComponents.Logo.block,
+      { ...textLogosettings, globalSettings }
+    );
+
+    ReactDOM.render([textLogo, imageLogo], document.getElementById("root"));
   </script>
 </html>

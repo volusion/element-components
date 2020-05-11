@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Logo component renders a text logo 1`] = `
+<div>
+  Test Store Name
+</div>
+`;
+
+exports[`Logo component renders an image logo 1`] = `
+<picture>
+  <img
+    alt=""
+    height="10"
+    src="http://example.com/test.jpg"
+    style="max-width: 100%;"
+    title=""
+    width="10"
+  />
+</picture>
+`;
