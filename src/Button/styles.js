@@ -52,7 +52,7 @@ export default ({ primary, secondary }) => {
             paddingLeft: '2rem',
             paddingRight: '2rem'
         },
-        sizeXL: {
+        sizeXLarge: {
             fontSize: '1.25rem',
             paddingTop: '1.25rem',
             paddingBottom: '1.25rem',

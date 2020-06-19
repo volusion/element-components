@@ -86,7 +86,7 @@ const factory = (
             'small',
             'medium',
             'large',
-            'xl',
+            'xlarge',
             'block'
         ]).isRequired,
         rounded: ElementPropTypes.oneOf([

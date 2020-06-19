@@ -15,7 +15,7 @@ type FontWeight = '300' | '400' | '500' | '600' | '700' | '800' | '900';
 export type BorderRadius = 'none' | 'small' | 'medium' | 'large' | 'pill';
 export type BorderThickness = 'none' | 'basic' | 'thin' | 'thick';
 type TextTransform = 'none' | 'capitalize' | 'lowercase' | 'uppercase';
-export type Size = 'small' | 'medium' | 'large' | 'xl' | 'block';
+export type Size = 'small' | 'medium' | 'large' | 'xlarge' | 'block';
 export type Spacing = 'none' | 'tracked' | 'tight' | 'mega';
 
 export interface BaseButtonStylesConfig {

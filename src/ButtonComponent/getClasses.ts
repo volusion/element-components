@@ -60,7 +60,7 @@ const getSizes = (size: Size) => {
             padding: '1rem 2rem'
         };
     }
-    if (size === 'xl') {
+    if (size === 'xlarge') {
         return {
             fontSize: '1.25rem',
             padding: '1.25rem 2.5rem',
