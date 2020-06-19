@@ -125,7 +125,7 @@ const factory = (
                 small: classes.sizeSmall,
                 medium: classes.sizeMedium,
                 large: classes.sizeLarge,
-                xl: classes.sizeXL,
+                xlarge: classes.sizeXLarge,
                 block: classes.sizeBlock
             };
             const corners = {
