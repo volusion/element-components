@@ -52,6 +52,15 @@ export default ({ primary, secondary }) => {
             paddingLeft: '2rem',
             paddingRight: '2rem'
         },
+        sizeXL: {
+            fontSize: '1.25rem',
+            paddingTop: '1.25rem',
+            paddingBottom: '1.25rem',
+            paddingLeft: '2.5rem',
+            paddingRight: '2.5rem',
+            width: '100%',
+            maxWidth: '30em'
+        },
         sizeBlock: {
             fontSize: '1rem',
             paddingTop: '1rem',
