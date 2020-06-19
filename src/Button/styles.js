@@ -67,8 +67,7 @@ export default ({ primary, secondary }) => {
             paddingBottom: '1rem',
             paddingLeft: '2rem',
             paddingRight: '2rem',
-            width: '100%',
-            maxWidth: '30em'
+            width: '100%'
         },
         cornerNone: {
             borderRadius: 0

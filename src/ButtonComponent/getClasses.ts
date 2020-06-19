@@ -72,7 +72,6 @@ const getSizes = (size: Size) => {
         fontSize: '1rem',
         padding: '1rem 2rem',
         width: '100%',
-        maxWidth: '30em'
     };
 };
 
