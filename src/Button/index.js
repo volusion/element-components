@@ -82,8 +82,13 @@ const factory = (
             'thick',
             'none'
         ]).isRequired,
-        size: ElementPropTypes.oneOf(['small', 'medium', 'large', 'block'])
-            .isRequired,
+        size: ElementPropTypes.oneOf([
+            'small',
+            'medium',
+            'large',
+            'xlarge',
+            'block'
+        ]).isRequired,
         rounded: ElementPropTypes.oneOf([
             'none',
             'small',
@@ -120,6 +125,7 @@ const factory = (
                 small: classes.sizeSmall,
                 medium: classes.sizeMedium,
                 large: classes.sizeLarge,
+                xlarge: classes.sizeXLarge,
                 block: classes.sizeBlock
             };
             const corners = {

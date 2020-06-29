@@ -52,14 +52,22 @@ export default ({ primary, secondary }) => {
             paddingLeft: '2rem',
             paddingRight: '2rem'
         },
+        sizeXLarge: {
+            fontSize: '1.25rem',
+            paddingTop: '1.25rem',
+            paddingBottom: '1.25rem',
+            paddingLeft: '2.5rem',
+            paddingRight: '2.5rem',
+            width: '100%',
+            maxWidth: '30em'
+        },
         sizeBlock: {
             fontSize: '1rem',
             paddingTop: '1rem',
             paddingBottom: '1rem',
             paddingLeft: '2rem',
             paddingRight: '2rem',
-            width: '100%',
-            maxWidth: '30em'
+            width: '100%'
         },
         cornerNone: {
             borderRadius: 0

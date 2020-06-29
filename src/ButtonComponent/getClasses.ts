@@ -60,11 +60,18 @@ const getSizes = (size: Size) => {
             padding: '1rem 2rem'
         };
     }
+    if (size === 'xlarge') {
+        return {
+            fontSize: '1.25rem',
+            padding: '1.25rem 2.5rem',
+            width: '100%',
+            maxWidth: '30em'
+        };
+    }
     return {
         fontSize: '1rem',
         padding: '1rem 2rem',
         width: '100%',
-        maxWidth: '30em'
     };
 };
 
