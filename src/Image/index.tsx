@@ -32,7 +32,7 @@ const Img = (props: ImgProps) => (
 const Image = ({ alt, height, src, title, utils, width }: ImageProps) => {
     const imgProps = { alt, height, src, title, width };
 
-    return utils.isAmpRequest ? (
+    return utils && utils.isAmpRequest ? (
         <AmpImg layout="responsive" {...imgProps} />
     ) : (
         <Img {...imgProps} />
