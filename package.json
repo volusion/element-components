@@ -3,12 +3,14 @@
   "version": "2.3.0",
   "description": "Collection of reusable components across Element blocks",
   "main": "lib/index.js",
+  "module": "es/index.js",
+  "types": "typedefs/src/index.d.ts",
   "author": "Volusion, LLC",
   "license": "MIT",
-  "module": "es/index.js",
   "files": [
     "lib",
-    "es"
+    "es",
+    "typedefs"
   ],
   "publishConfig": {
     "access": "public"
@@ -63,12 +65,13 @@
   "scripts": {
     "build": "rollup -c",
     "compile": "tsc --pretty",
+    "compile:typedefs": "npx tsc --project tsconfig.json  --declaration --emitDeclarationOnly  --outDir typedefs",
     "start": "live-server --port=5309 --open=src",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "test": "jest --passWithNoTests",
     "test:watch": "jest --watch",
-    "prepublish": "npm run lint && npm run build",
+    "prepublish": "npm run lint && npm run build && npm run compile:typedefs",
     "release": "npm run prepublish && np",
     "watch": "rollup -c --watch",
     "audit:ci": "audit-ci --high"

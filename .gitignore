@@ -3,5 +3,6 @@ dist
 build
 lib
 es
+typedefs
 .eslintcache
 .vscode

@@ -17,5 +17,14 @@
         "strict": true,
         "target": "es5",
     },
-    "exclude": ["dist", "docs", "node_modules"]
+    "exclude": [
+        "dist",
+        "es",
+        "typedefs",
+        "docs",
+        "node_modules",
+        "jest.config.js",
+        "jest.setup.ts",
+        "rollup.config.js"
+    ]
 }
