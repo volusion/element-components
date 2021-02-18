@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
         "allowSyntheticDefaultImports": true,
-        "allowJs": true,
+        "allowJs": false,
         "baseUrl": "src",
         "emitDecoratorMetadata": true,
         "esModuleInterop": true,

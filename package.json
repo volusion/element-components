@@ -4,7 +4,7 @@
   "description": "Collection of reusable components across Element blocks",
   "main": "lib/index.js",
   "module": "es/index.js",
-  "types": "typedefs/src/index.d.ts",
+  "types": "./typedefs/src/index.d.ts",
   "author": "Volusion, LLC",
   "license": "MIT",
   "files": [

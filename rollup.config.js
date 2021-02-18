@@ -9,7 +9,7 @@ const name = 'ElementComponents';
 function standardBuilds() {
     return {
         external: ['aphrodite', 'react', 'react-dom'],
-        input: ['src/index.js'],
+        input: ['src/index.ts'],
         output: [
             {
                 dir: 'lib',
@@ -55,7 +55,7 @@ function devBuild() {
         return {};
     }
     return {
-        input: 'src/index.js',
+        input: 'src/index.ts',
         output: {
             file: 'dist/component.umd.js',
             format: 'umd',
