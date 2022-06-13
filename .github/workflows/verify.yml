@@ -22,9 +22,6 @@ jobs:
           - name: Install NPM Modules
             run: npm ci
 
-          - name: NPM Audit
-            run: npm run audit:ci
-
           - name: Build
             run: npm run build
 
@@ -33,3 +30,6 @@ jobs:
 
           - name: Lint
             run: npm run lint
+
+          - name: NPM Audit
+            run: npm run audit:ci
