@@ -1,0 +1,35 @@
+name: Verify PR
+
+on:
+    pull_request:
+        branches: [master]
+
+jobs:
+    build:
+        name: verify-pr
+        runs-on: ubuntu-latest
+
+        steps:
+          - name: Checkout code
+            uses: actions/checkout@v2
+
+          - name: Use Node.js
+            uses: actions/setup-node@v2
+            with:
+              node-version: '12.14.1'
+              cache: npm
+
+          - name: Install NPM Modules
+            run: npm ci
+
+          - name: Build
+            run: npm run build
+
+          - name: Tests
+            run: npm test
+
+          - name: Lint
+            run: npm run lint
+
+          - name: NPM Audit
+            run: npm run audit:ci
