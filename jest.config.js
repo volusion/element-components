@@ -6,13 +6,7 @@ module.exports = {
         '^.+\\.(ts|tsx)$': [
             'ts-jest',
             {
-                tsconfig: {
-                    jsx: 'react',
-                    esModuleInterop: true,
-                    allowSyntheticDefaultImports: true,
-                    skipLibCheck: true,
-                    types: ['node', 'jest']
-                }
+                tsconfig: 'tsconfig.test.json'
             }
         ]
     },
