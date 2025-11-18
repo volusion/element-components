@@ -21,14 +21,18 @@ describe('Button component', () => {
 
     it('uses LinkButton when "href" is passed', () => {
         const href = '#';
-        const { container } = render(<ButtonComponent {...props} href={href} />);
+        const { container } = render(
+            <ButtonComponent {...props} href={href} />
+        );
         const link = container.querySelector('a');
         expect(link).toBeInTheDocument();
     });
 
     it('uses StandardButton when no "href" is passed', () => {
         const href = '';
-        const { container } = render(<ButtonComponent {...props} href={href} />);
+        const { container } = render(
+            <ButtonComponent {...props} href={href} />
+        );
         expect(container).toMatchSnapshot();
         const link = container.querySelector('a');
         expect(link).not.toBeInTheDocument();

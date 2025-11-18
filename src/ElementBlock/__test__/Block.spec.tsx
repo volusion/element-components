@@ -21,7 +21,9 @@ describe('The ElementBlock component', () => {
 
     describe('when there are no children', () => {
         it('should return null', () => {
-            const { container } = render(<Block {...props} children={undefined} />);
+            const { container } = render(
+                <Block {...props} children={undefined} />
+            );
             expect(container.firstChild).toBeNull();
         });
     });
@@ -43,7 +45,9 @@ describe('The ElementBlock component', () => {
             const { container } = render(
                 <Block {...props} customAttrs={customAttrs} />
             );
-            const div = container.querySelector('[data-element-test-name="TEST_VALUE"]');
+            const div = container.querySelector(
+                '[data-element-test-name="TEST_VALUE"]'
+            );
             expect(div).toBeInTheDocument();
         });
     });

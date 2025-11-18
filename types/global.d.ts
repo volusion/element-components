@@ -1,6 +1,6 @@
-declare module "@volusion/element-proptypes";
+declare module '@volusion/element-proptypes';
 declare namespace JSX {
-	interface IntrinsicElements {
-		'amp-img': any;
-	}
+    interface IntrinsicElements {
+        'amp-img': any;
+    }
 }

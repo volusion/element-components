@@ -8,7 +8,7 @@ export interface LogoProps {
     StoreName?: any;
 }
 
-const Logo = ({style, Image, StoreName}: LogoProps) => {
+const Logo = ({ style, Image, StoreName }: LogoProps) => {
     if (style === 'Image') {
         return <Image />;
     }

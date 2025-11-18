@@ -15,9 +15,10 @@ export const getStyles = (
     const tabletStyles =
         blockConfig.showOnTablet === false
             ? {
-                  '@media only screen and (min-width: 30em) and (max-width: 60em)': {
-                      display: 'none'
-                  }
+                  '@media only screen and (min-width: 30em) and (max-width: 60em)':
+                      {
+                          display: 'none'
+                      }
               }
             : {};
     const desktopStyles =
@@ -51,7 +52,7 @@ export const getStyles = (
 
 const getPaddingAmount = (
     paddingSize: 'None' | 'Small' | 'Medium' | 'Large',
-    globalSettings: ObjectLiteral
+    _globalSettings: ObjectLiteral
 ) => {
     if (/^small$/i.test(paddingSize)) return '0.5rem';
     if (/^medium$/i.test(paddingSize)) return '1rem';
