@@ -1,7 +1,7 @@
-import babel from 'rollup-plugin-babel';
-import commonjs from 'rollup-plugin-commonjs';
-import resolve from 'rollup-plugin-node-resolve';
-import replace from 'rollup-plugin-replace';
+import babel from '@rollup/plugin-babel';
+import commonjs from '@rollup/plugin-commonjs';
+import resolve from '@rollup/plugin-node-resolve';
+import replace from '@rollup/plugin-replace';
 import typescript from '@rollup/plugin-typescript';
 
 const name = 'ElementComponents';
@@ -33,20 +33,28 @@ function standardBuilds() {
             }
         ],
         plugins: [
-            typescript(),
+            typescript({
+                tsconfig: './tsconfig.json',
+                declaration: false,
+                declarationMap: false
+            }),
             babel({
-                plugins: ['external-helpers'],
-                exclude: ['node_modules/**']
+                babelHelpers: 'bundled',
+                exclude: ['node_modules/**'],
+                extensions: ['.js', '.jsx', '.ts', '.tsx']
             }),
             replace({
-                'process.env.NODE_ENV': JSON.stringify('production')
+                preventAssignment: true,
+                values: {
+                    'process.env.NODE_ENV': JSON.stringify('production')
+                }
             }),
             resolve({
-                browser: true
+                browser: true,
+                extensions: ['.js', '.jsx', '.ts', '.tsx']
             }),
             commonjs()
-        ],
-        experimentalCodeSplitting: true
+        ]
     };
 }
 
@@ -70,16 +78,25 @@ function devBuild() {
         },
         external: ['aphrodite', 'react', 'react-dom'],
         plugins: [
-            typescript(),
+            typescript({
+                tsconfig: './tsconfig.json',
+                declaration: false,
+                declarationMap: false
+            }),
             babel({
-                plugins: ['external-helpers'],
-                exclude: ['node_modules/**']
+                babelHelpers: 'bundled',
+                exclude: ['node_modules/**'],
+                extensions: ['.js', '.jsx', '.ts', '.tsx']
             }),
             replace({
-                'process.env.NODE_ENV': JSON.stringify('production')
+                preventAssignment: true,
+                values: {
+                    'process.env.NODE_ENV': JSON.stringify('production')
+                }
             }),
             resolve({
-                browser: true
+                browser: true,
+                extensions: ['.js', '.jsx', '.ts', '.tsx']
             }),
             commonjs()
         ]

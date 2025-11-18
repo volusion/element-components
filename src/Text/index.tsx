@@ -6,10 +6,9 @@ interface TextProps extends ComponentProps {
     htmlString: string;
 }
 
-const Text: React.FC<TextProps> = ({ htmlString, ...props }) => {
+const Text: React.FC<TextProps> = ({ htmlString, globalSettings, ...props }) => {
     if (!htmlString) return null;
-    // We delete the unused globalSettings prop so that React won't complain about it not being a valid DOM attribute.
-    delete props.globalSettings;
+    // We exclude globalSettings from props so React won't complain about it not being a valid DOM attribute.
     return <div {...props} dangerouslySetInnerHTML={{ __html: htmlString }} />;
 };
 
