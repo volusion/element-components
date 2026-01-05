@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
 import { block as Logo, LogoProps } from './index';
 import { defaultConfig } from './config';
 import { block as Text } from '../Text';
@@ -11,20 +11,20 @@ describe('Logo component', () => {
 
     beforeEach(() => {
         props = {
-            ...defaultConfig,
+            ...defaultConfig
         };
     });
 
     it('renders a text logo', () => {
         const textProps = {
             globalSettings,
-            htmlString: 'Test Store Name',
+            htmlString: 'Test Store Name'
         };
-        const TextComponent = () => <Text {...textProps}  />;
+        const TextComponent = () => <Text {...textProps} />;
         props.StoreName = TextComponent;
 
-        const renderedTextLogo = mount(<Logo {...props} />);
-        expect(renderedTextLogo.render()).toMatchSnapshot();
+        const { container } = render(<Logo {...props} />);
+        expect(container).toMatchSnapshot();
     });
 
     it('renders an image logo', () => {
@@ -43,7 +43,7 @@ describe('Logo component', () => {
         props.style = 'Image';
         props.Image = ImageComponent;
 
-        const renderedImageLogo = mount(<Logo {...props} />);
-        expect(renderedImageLogo.render()).toMatchSnapshot();
+        const { container } = render(<Logo {...props} />);
+        expect(container).toMatchSnapshot();
     });
 });

@@ -71,7 +71,7 @@ const getSizes = (size: Size) => {
     return {
         fontSize: '1rem',
         padding: '1rem 2rem',
-        width: '100%',
+        width: '100%'
     };
 };
 

@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
         "allowSyntheticDefaultImports": true,
-        "allowJs": true,
+        "allowJs": false,
         "baseUrl": "src",
         "emitDecoratorMetadata": true,
         "esModuleInterop": true,
@@ -11,11 +11,13 @@
         "lib": ["dom", "es5", "es2015.promise", "es6", "es7"],
         "module": "esnext",
         "moduleResolution": "node",
-        "noEmitOnError": true,
-        "outDir": "build",
+        "noEmitOnError": false,
+        "declaration": true,
+        "declarationMap": true,
         "sourceMap": true,
         "strict": true,
-        "target": "es5",
+        "target": "es5"
     },
-    "exclude": ["dist", "docs", "node_modules"]
+    "include": ["src/**/*.ts", "src/**/*.tsx", "types/**/*.d.ts"],
+    "exclude": ["dist", "docs", "node_modules", "lib", "es", "build", "**/*.spec.ts", "**/*.spec.tsx", "**/*.js"]
 }

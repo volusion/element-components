@@ -1,38 +1,44 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Image component matches snapshot 1`] = `
-<picture>
-  <img
-    alt=""
-    height="270"
-    src="https://res.cloudinary.com/dyx4yhvoq/image/upload/v1545428185/images/tcp-no-image.jpg"
-    style="max-width:100%"
-    title=""
-    width="360"
-  />
-</picture>
+<div>
+  <picture>
+    <img
+      alt=""
+      height="270"
+      src="https://res.cloudinary.com/dyx4yhvoq/image/upload/v1545428185/images/tcp-no-image.jpg"
+      style="max-width: 100%;"
+      title=""
+      width="360"
+    />
+  </picture>
+</div>
 `;
 
 exports[`Image component should change src, alt text, and title when given props 1`] = `
-<picture>
-  <img
-    alt="fake alt text"
-    height="270"
-    src="https://www.fakeimgsrc.com/fake/image.jpg"
-    style="max-width: 100%;"
-    title="fake title"
-    width="360"
-  />
-</picture>
+<div>
+  <picture>
+    <img
+      alt="fake alt text"
+      height="270"
+      src="https://www.fakeimgsrc.com/fake/image.jpg"
+      style="max-width: 100%;"
+      title="fake title"
+      width="360"
+    />
+  </picture>
+</div>
 `;
 
 exports[`Image component should have an amp-img tag when an AMP request 1`] = `
-<amp-img
-  alt=""
-  height="270"
-  layout="responsive"
-  src="https://res.cloudinary.com/dyx4yhvoq/image/upload/v1545428185/images/tcp-no-image.jpg"
-  title=""
-  width="360"
-/>
+<div>
+  <amp-img
+    alt=""
+    height="270"
+    layout="responsive"
+    src="https://res.cloudinary.com/dyx4yhvoq/image/upload/v1545428185/images/tcp-no-image.jpg"
+    title=""
+    width="360"
+  />
+</div>
 `;

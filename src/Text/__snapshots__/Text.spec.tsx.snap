@@ -2,30 +2,38 @@
 
 exports[`The <Text /> Component with custom content matches the snapshot 1`] = `
 <div>
-  <h1>
-    Test Content
-  </h1>
+  <div>
+    <h1>
+      Test Content
+    </h1>
+  </div>
 </div>
 `;
 
 exports[`The <Text /> Component with custom content matches the snapshot 2`] = `
 <div>
-  Test Content
+  <div>
+    Test Content
+  </div>
 </div>
 `;
 
 exports[`The <Text /> Component with custom content matches the snapshot 3`] = `
 <div>
-  <p>
-    Test Content
-  </p>
+  <div>
+    <p>
+      Test Content
+    </p>
+  </div>
 </div>
 `;
 
 exports[`The <Text /> Component with default props matches the snapshot 1`] = `
 <div>
-  Lorem Ipsum
+  <div>
+    Lorem Ipsum
+  </div>
 </div>
 `;
 
-exports[`The <Text /> Component with empty content matches the snapshot 1`] = `null`;
+exports[`The <Text /> Component with empty content matches the snapshot 1`] = `<div />`;

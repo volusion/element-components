@@ -3,15 +3,15 @@ module.exports = {
     moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx'],
     moduleDirectories: ['node_modules', 'src'],
     transform: {
-        '^.+\\.(ts|tsx)$': 'ts-jest'
+        '^.+\\.(ts|tsx)$': [
+            'ts-jest',
+            {
+                tsconfig: 'tsconfig.test.json'
+            }
+        ]
     },
     transformIgnorePatterns: ['[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$'],
-    snapshotSerializers: ['enzyme-to-json/serializer'],
-    globals: {
-        'ts-jest': {
-            tsConfig: 'tsconfig.json'
-        }
-    },
+    testEnvironment: 'jsdom',
     rootDir: '.',
     testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.[jt]sx?$',
     verbose: true,

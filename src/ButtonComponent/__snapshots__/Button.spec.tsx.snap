@@ -1,187 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Button component matches snapshot 1`] = `
-<button
-  class="button_1hmnzek"
->
-  My Button
-</button>
+<div>
+  <button
+    class="button_1hmnzek"
+  >
+    My Button
+  </button>
+</div>
 `;
 
 exports[`Button component uses StandardButton when no "href" is passed 1`] = `
-<Button
-  buttonStyle="Primary"
-  globalSettings={
-    Object {
-      "globalComponents": Object {
-        "volComponentButton": Object {
-          "primaryButtonStyles": Object {
-            "backgroundColor": "rgba(247, 68, 186, 1)",
-            "borderColor": "rgba(247, 67, 186, 1)",
-            "borderThickness": "none",
-            "fontWeight": "700",
-            "growOnHover": true,
-            "hoverBackgroundColor": "rgba(218, 15, 148, 1)",
-            "hoverBorderColor": "rgba(0, 0, 0, 1)",
-            "hoverTextColor": "#fff",
-            "letterSpacing": "none",
-            "rounded": "none",
-            "size": "large",
-            "textColor": "#fff",
-            "textTransform": "none",
-          },
-          "secondaryButtonStyles": Object {
-            "backgroundColor": "rgba(247, 74, 201, 1)",
-            "borderColor": "rgba(247, 67, 186, 1)",
-            "borderThickness": "thin",
-            "fontWeight": "700",
-            "growOnHover": false,
-            "hoverBackgroundColor": "rgba(0, 0, 0, 1)",
-            "hoverBorderColor": "rgba(0, 0, 0, 1)",
-            "hoverTextColor": "rgba(255, 255, 255, 1)",
-            "letterSpacing": "none",
-            "rounded": "none",
-            "size": "block",
-            "textColor": "rgba(255, 255, 255, 1)",
-            "textTransform": "none",
-          },
-        },
-      },
-    }
-  }
-  href=""
-  newWindow={false}
-  text="My Button"
->
-  <BaseButton
-    buttonStyle="Primary"
-    globalButtonSettings={
-      Object {
-        "backgroundColor": "rgba(247, 68, 186, 1)",
-        "borderColor": "rgba(247, 67, 186, 1)",
-        "borderThickness": "none",
-        "fontWeight": "700",
-        "growOnHover": true,
-        "hoverBackgroundColor": "rgba(218, 15, 148, 1)",
-        "hoverBorderColor": "rgba(0, 0, 0, 1)",
-        "hoverTextColor": "#fff",
-        "letterSpacing": "none",
-        "rounded": "none",
-        "size": "large",
-        "textColor": "#fff",
-        "textTransform": "none",
-      }
-    }
-    globalSettings={
-      Object {
-        "globalComponents": Object {
-          "volComponentButton": Object {
-            "primaryButtonStyles": Object {
-              "backgroundColor": "rgba(247, 68, 186, 1)",
-              "borderColor": "rgba(247, 67, 186, 1)",
-              "borderThickness": "none",
-              "fontWeight": "700",
-              "growOnHover": true,
-              "hoverBackgroundColor": "rgba(218, 15, 148, 1)",
-              "hoverBorderColor": "rgba(0, 0, 0, 1)",
-              "hoverTextColor": "#fff",
-              "letterSpacing": "none",
-              "rounded": "none",
-              "size": "large",
-              "textColor": "#fff",
-              "textTransform": "none",
-            },
-            "secondaryButtonStyles": Object {
-              "backgroundColor": "rgba(247, 74, 201, 1)",
-              "borderColor": "rgba(247, 67, 186, 1)",
-              "borderThickness": "thin",
-              "fontWeight": "700",
-              "growOnHover": false,
-              "hoverBackgroundColor": "rgba(0, 0, 0, 1)",
-              "hoverBorderColor": "rgba(0, 0, 0, 1)",
-              "hoverTextColor": "rgba(255, 255, 255, 1)",
-              "letterSpacing": "none",
-              "rounded": "none",
-              "size": "block",
-              "textColor": "rgba(255, 255, 255, 1)",
-              "textTransform": "none",
-            },
-          },
-        },
-      }
-    }
-    href=""
-    newWindow={false}
-    text="My Button"
+<div>
+  <button
+    class="button_1hmnzek"
   >
-    <Component
-      buttonStyle="Primary"
-      className="button_1hmnzek"
-      globalButtonSettings={
-        Object {
-          "backgroundColor": "rgba(247, 68, 186, 1)",
-          "borderColor": "rgba(247, 67, 186, 1)",
-          "borderThickness": "none",
-          "fontWeight": "700",
-          "growOnHover": true,
-          "hoverBackgroundColor": "rgba(218, 15, 148, 1)",
-          "hoverBorderColor": "rgba(0, 0, 0, 1)",
-          "hoverTextColor": "#fff",
-          "letterSpacing": "none",
-          "rounded": "none",
-          "size": "large",
-          "textColor": "#fff",
-          "textTransform": "none",
-        }
-      }
-      globalSettings={
-        Object {
-          "globalComponents": Object {
-            "volComponentButton": Object {
-              "primaryButtonStyles": Object {
-                "backgroundColor": "rgba(247, 68, 186, 1)",
-                "borderColor": "rgba(247, 67, 186, 1)",
-                "borderThickness": "none",
-                "fontWeight": "700",
-                "growOnHover": true,
-                "hoverBackgroundColor": "rgba(218, 15, 148, 1)",
-                "hoverBorderColor": "rgba(0, 0, 0, 1)",
-                "hoverTextColor": "#fff",
-                "letterSpacing": "none",
-                "rounded": "none",
-                "size": "large",
-                "textColor": "#fff",
-                "textTransform": "none",
-              },
-              "secondaryButtonStyles": Object {
-                "backgroundColor": "rgba(247, 74, 201, 1)",
-                "borderColor": "rgba(247, 67, 186, 1)",
-                "borderThickness": "thin",
-                "fontWeight": "700",
-                "growOnHover": false,
-                "hoverBackgroundColor": "rgba(0, 0, 0, 1)",
-                "hoverBorderColor": "rgba(0, 0, 0, 1)",
-                "hoverTextColor": "rgba(255, 255, 255, 1)",
-                "letterSpacing": "none",
-                "rounded": "none",
-                "size": "block",
-                "textColor": "rgba(255, 255, 255, 1)",
-                "textTransform": "none",
-              },
-            },
-          },
-        }
-      }
-      href=""
-      newWindow={false}
-      text="My Button"
-    >
-      <button
-        className="button_1hmnzek"
-      >
-        My Button
-      </button>
-    </Component>
-  </BaseButton>
-</Button>
+    My Button
+  </button>
+</div>
 `;

@@ -81,7 +81,6 @@ const addAmpScript = (customElement) => {
         );
         document.head.appendChild(script);
     } else {
-        // eslint-disable-next-line
         console.error(
             `"addAmpScript" is only available on AMP pages. Please check if "isAmpRequest" is true before using this function.`
         );
@@ -89,13 +88,12 @@ const addAmpScript = (customElement) => {
 };
 
 const throwNotFound = () => {
-    // eslint-disable-next-line
     console.error(
         `"throwNotFound()" was called. On a live site, this would load a 404 page.`
     );
 };
 
-/* eslint-disable no-unused-vars */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 const {
     joinClasses,
     ElementPropTypes,
@@ -105,7 +103,7 @@ const {
     addScript,
     ...sdkUtils
 } = window.ElementSdk;
-/* eslint-enable no-unused-vars */
+/* eslint-enable @typescript-eslint/no-unused-vars */
 
 const serverUtils = {
     addAmpScript,
