@@ -17,20 +17,19 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Configure npm registry
-        env:
-          JF_ARTIFACTORY_USER_NAME: ${{ secrets.JF_ARTIFACTORY_USER_NAME }}
-          JF_ARTIFACTORY_API_KEY: ${{ secrets.JF_ARTIFACTORY_API_KEY }}
-        run: |
-          curl -u ${JF_ARTIFACTORY_USER_NAME}:${JF_ARTIFACTORY_API_KEY} https://volusion.jfrog.io/artifactory/api/npm/auth > .npmrc
-          echo "registry=https://volusion.jfrog.io/artifactory/api/npm/npm/" >> .npmrc
-          echo "always-auth=true" >> .npmrc
-
       - name: Use Node.js
         uses: actions/setup-node@v6
         with:
           node-version: 22
-          cache: npm
+          registry-url: 'https://volusion.jfrog.io/artifactory/api/npm/npm/'
+          scope: '@volusion'
+
+      - name: Configure npm authentication
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.JF_ARTIFACTORY_API_KEY }}
+        run: |
+          npm config set //volusion.jfrog.io/artifactory/api/npm/npm/:_authToken=${NODE_AUTH_TOKEN}
+          npm config set //volusion.jfrog.io/artifactory/api/npm/npm/:always-auth true
 
       - name: Install NPM Modules
         run: npm ci
