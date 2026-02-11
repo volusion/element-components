@@ -16,8 +16,9 @@ jobs:
       - uses: google-github-actions/release-please-action@v4
         id: release
         with:
-          release-type: node
-          package-name: '@volusion/element-components'
+          token: ${{ secrets.GITHUB_TOKEN }}
+          config-file: .release-please-manifest.json
+          manifest-file: release-please-config.json
     outputs:
       release_created: ${{ steps.release.outputs.release_created }}
       tag_name: ${{ steps.release.outputs.tag_name }}
