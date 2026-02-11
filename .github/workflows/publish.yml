@@ -1,5 +1,8 @@
 name: Publish to JFrog Artifactory
 
+permissions:
+  contents: read
+
 on:
   push:
     tags:
