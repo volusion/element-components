@@ -17,16 +17,16 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Configure npm registry
+        run: |
+          echo "registry=https://volusion.jfrog.io/artifactory/api/npm/npm/" > .npmrc
+          echo "//volusion.jfrog.io/artifactory/api/npm/npm/:_authToken=${{ secrets.JFROG_AUTH_TOKEN }}" >> .npmrc
+
       - name: Use Node.js
         uses: actions/setup-node@v6
         with:
           node-version: 22
           cache: npm
-
-      - name: Configure npm registry
-        run: |
-          echo "registry=https://volusion.jfrog.io/artifactory/api/npm/npm/" > .npmrc
-          echo "//volusion.jfrog.io/artifactory/api/npm/npm/:_authToken=${{ secrets.JFROG_AUTH_TOKEN }}" >> .npmrc
 
       - name: Install NPM Modules
         run: npm ci
