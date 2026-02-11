@@ -23,7 +23,9 @@ jobs:
           JF_ARTIFACTORY_API_KEY: ${{ secrets.JF_ARTIFACTORY_API_KEY }}
         run: |
           echo "registry=https://volusion.jfrog.io/artifactory/api/npm/npm/" > .npmrc
-          echo "//volusion.jfrog.io/artifactory/api/npm/npm/:_auth=$(echo -n ${JF_ARTIFACTORY_USER_NAME}:${JF_ARTIFACTORY_API_KEY} | base64)" >> .npmrc
+          echo "//volusion.jfrog.io/artifactory/api/npm/npm/:username=${JF_ARTIFACTORY_USER_NAME}" >> .npmrc
+          echo "//volusion.jfrog.io/artifactory/api/npm/npm/:_password=${JF_ARTIFACTORY_API_KEY}" >> .npmrc
+          echo "//volusion.jfrog.io/artifactory/api/npm/npm/:email=noreply@volusion.com" >> .npmrc
           echo "//volusion.jfrog.io/artifactory/api/npm/npm/:always-auth=true" >> .npmrc
 
       - name: Use Node.js
