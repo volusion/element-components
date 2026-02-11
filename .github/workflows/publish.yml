@@ -19,11 +19,13 @@ jobs:
 
       - name: Configure npm authentication  
         env:
+          JF_ARTIFACTORY_USER_NAME: ${{ secrets.JF_ARTIFACTORY_USER_NAME }}
           JF_ARTIFACTORY_API_KEY: ${{ secrets.JF_ARTIFACTORY_API_KEY }}
         run: |
-          echo "registry=https://volusion.jfrog.io/artifactory/api/npm/npm/" > .npmrc
-          echo "//volusion.jfrog.io/artifactory/api/npm/npm/:_authToken=${JF_ARTIFACTORY_API_KEY}" >> .npmrc
-          echo "//volusion.jfrog.io/artifactory/api/npm/npm/:always-auth=true" >> .npmrc
+          curl -u ${JF_ARTIFACTORY_USER_NAME}:${JF_ARTIFACTORY_API_KEY} \
+            https://volusion.jfrog.io/artifactory/api/npm/auth > .npmrc
+          echo "registry=https://volusion.jfrog.io/artifactory/api/npm/npm/" >> .npmrc
+          echo "@volusion:registry=https://volusion.jfrog.io/artifactory/api/npm/npm/" >> .npmrc
 
       - name: Use Node.js
         uses: actions/setup-node@v6
