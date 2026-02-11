@@ -24,6 +24,7 @@ jobs:
         run: |
           echo "//volusion.jfrog.io/artifactory/api/npm/npm/:_auth=$(echo -n ${JF_ARTIFACTORY_USER_NAME}:${JF_ARTIFACTORY_API_KEY} | base64 -w 0)" > .npmrc
           echo "//volusion.jfrog.io/artifactory/api/npm/npm/:always-auth=true" >> .npmrc
+          echo "registry=https://volusion.jfrog.io/artifactory/api/npm/npm/" >> .npmrc
 
       - name: Use Node.js
         uses: actions/setup-node@v6
