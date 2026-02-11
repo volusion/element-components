@@ -23,7 +23,8 @@ jobs:
           JF_ARTIFACTORY_API_KEY: ${{ secrets.JF_ARTIFACTORY_API_KEY }}
         run: |
           curl -u ${JF_ARTIFACTORY_USER_NAME}:${JF_ARTIFACTORY_API_KEY} \
-            https://volusion.jfrog.io/artifactory/api/npm/auth > .npmrc
+            https://volusion.jfrog.io/artifactory/api/npm/auth | \
+            sed 's/_auth/\/\/volusion.jfrog.io\/artifactory\/api\/npm\/npm\/:_auth/' > .npmrc
           echo "registry=https://volusion.jfrog.io/artifactory/api/npm/npm/" >> .npmrc
           echo "@volusion:registry=https://volusion.jfrog.io/artifactory/api/npm/npm/" >> .npmrc
 
