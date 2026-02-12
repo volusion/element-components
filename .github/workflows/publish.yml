@@ -2,7 +2,7 @@ name: Publish to JFrog Artifactory
 
 permissions:
   contents: read
-  id-token: write
+  # id-token: write
 
 on:
   workflow_call:
