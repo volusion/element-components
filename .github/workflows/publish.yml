@@ -2,7 +2,7 @@ name: Publish to JFrog Artifactory
 
 permissions:
   contents: read
-  id-token: write
+  # id-token: write
 
 on:
   workflow_call:
@@ -42,6 +42,8 @@ jobs:
 
   publish-to-npm:
     name: Publish To NPMJS
+    permissions:
+      id-token: write
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
