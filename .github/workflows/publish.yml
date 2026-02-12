@@ -56,4 +56,4 @@ jobs:
         with:
           name: volusion-element-components
 
-      - run: npm publish
+      - run: npm publish volusion-element-components*.tgz
