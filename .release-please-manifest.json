@@ -7,5 +7,6 @@
       "bump-minor-pre-major": false,
       "bump-patch-for-minor-pre-major": false
     }
-  }
+  },
+  ".": "2.3.2"
 }
