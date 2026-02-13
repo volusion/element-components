@@ -30,6 +30,7 @@ jobs:
         uses: actions/setup-node@v6
         with:
           node-version-file: .nvmrc
+          cache: npm
 
       - name: Download NPM Package File
         uses: actions/download-artifact@v4
@@ -37,11 +38,20 @@ jobs:
           name: volusion-element-components
           
       - name: Publish to JFrog Artifactory
-        run: npm publish volusion-element-components*.tgz
+        env:
+          JF_ARTIFACTORY_USER_NAME: ${{ secrets.JF_ARTIFACTORY_USER_NAME }}
+          JF_ARTIFACTORY_API_KEY: ${{ secrets.JF_ARTIFACTORY_API_KEY }}
+        run: |
+          curl -u ${JF_ARTIFACTORY_USER_NAME}:${JF_ARTIFACTORY_API_KEY} \
+            https://volusion.jfrog.io/artifactory/api/npm/auth | \
+            sed 's/_auth/\/\/volusion.jfrog.io\/artifactory\/api\/npm\/npm\/:_auth/' > .npmrc
+          echo "registry=https://volusion.jfrog.io/artifactory/api/npm/npm/" >> .npmrc
+          npm publish volusion-element-components*.tgz
 
   publish-to-npm:
     name: Publish To NPMJS
     permissions:
+      contents: read
       id-token: write
     runs-on: ubuntu-latest
     steps:
@@ -57,4 +67,4 @@ jobs:
         with:
           name: volusion-element-components
 
-      - run: npm publish volusion-element-components*.tgz
+      - run: npm publish volusion-element-components*.tgz --provenance --access public
